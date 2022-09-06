@@ -16,8 +16,16 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v){
         switch (v.getId()) {
             case R.id.searchBtn:
-                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(intent);
+                Intent intentS = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intentS);
+                break;
+            case R.id.mainLoginBtn:
+                Intent intentL = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intentL);
+                break;
+            case R.id.mainJoinBtn:
+                Intent intentJ = new Intent(MainActivity.this, JoinActivity.class);
+                startActivity(intentJ);
                 break;
         }
     }
