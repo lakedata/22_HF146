@@ -75,7 +75,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="혜택정보" />
+                android:text="혜택정보"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -83,6 +84,19 @@
                 android:padding="16dp"
                 android:text="할인형 50% 할인
                 적립형 50% 적립" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="유의사항"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="할인 또는 적립 혜택을 받기 위해서는 반드시 직업에게 app내 바코드를 제시해야합나다. 횟수제한: 월 1회" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
