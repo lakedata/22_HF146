@@ -27,7 +27,8 @@
             android:exported="false" />
         <activity android:name=".BenefitActivity"
             android:exported="false" />
-
+        <activity android:name=".BenefiltDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="true">
