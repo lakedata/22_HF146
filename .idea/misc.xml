@@ -3,15 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_benefit_list.xml" value="0.1421875" />
-        <entry key="app/src/main/res/layout/activity_join.xml" value="0.23113250732421875" />
-        <entry key="app/src/main/res/layout/adapter_benefit.xml" value="0.3369163513183594" />
-        <entry key="app/src/main/res/layout/benefit_adapter_view.xml" value="0.23735684995298034" />
-        <entry key="app/src/main/res/layout/benefit_list.xml" value="0.22407407407407406" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout-v21/activity_main.xml" value="0.1328125" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/activity_benefit_list.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/activity_join.xml" value="0.264" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/activity_main2.xml" value="0.264" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/activity_search.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/app_bar_main.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/content_main.xml" value="0.176" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_benefit.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_bookmark.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_fav_app.xml" value="0.26403985507246375" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_fav_brand.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_map.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_mypage.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/fragment_setting.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/layout/nav_header_main.xml" value="0.4" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/menu/activity_main_drawer.xml" value="0.6" />
+        <entry key="..\:/Users/1201s/Desktop/hanium/MyData/myB/app/src/main/res/menu/main_activity2.xml" value="0.2" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

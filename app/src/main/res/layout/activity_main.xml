@@ -35,7 +35,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/mainLoginBtn"
+        android:id="@+id/mainLoginBtn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/mainJoinBtn"
+        android:id="@+id/mainJoinBtn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -58,7 +58,7 @@
         android:minHeight="48dp"
         android:onClick="onClick"
         android:text="회원가입"
-        app:layout_constraintStart_toEndOf="@+id/mainLoginBtn"
+        app:layout_constraintStart_toEndOf="@+id/mainLoginBtn3"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
