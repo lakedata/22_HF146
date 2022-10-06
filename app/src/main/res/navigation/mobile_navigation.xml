@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.hanium.android.mydata.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_benefit"
+        android:name="com.hanium.android.mydata.ui.benefit.BenefitFragment"
+        android:label="@string/menu_benefit"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.hanium.android.mydata.ui.map.MapFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/nav_bookmark"
+        android:name="com.hanium.android.mydata.ui.bookmark.BookmarkFragment"
+        android:label="@string/menu_bookmark"
+        tools:layout="@layout/fragment_bookmark" />
+
+    <fragment
+        android:id="@+id/nav_favBrand"
+        android:name="com.hanium.android.mydata.ui.favBrand.FavBrandFragment"
+        android:label="@string/menu_favBrand"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_favApp"
+        android:name="com.hanium.android.mydata.ui.favApp.FavAppFragment"
+        android:label="@string/menu_favApp"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_mypage"
+        android:name="com.hanium.android.mydata.ui.mypage.MypageFragment"
+        android:label="@string/menu_mypage"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.hanium.android.mydata.ui.setting.SettingFragment"
+        android:label="@string/menu_setting"
+        tools:layout="@layout/fragment_home" />
+</navigation>
