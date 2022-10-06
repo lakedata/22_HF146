@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hanium.android.mydata.databinding.ActivityMain2Binding;
 
 public class MainActivity2 extends AppCompatActivity {
-
+//
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMain2Binding binding;
 
