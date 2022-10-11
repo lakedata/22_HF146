@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // chrome
         Button chromeBtn = binding.chromeBtn;
         chromeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,20 +54,23 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // login
         Button mainLoginBtn = binding.mainLoginBtn;
         mainLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentL = new Intent((MainActivity2)getActivity(), LoginActivity.class);
+                Intent intentL = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intentL);
             }
         });
 
+
+        // join
         Button mainJoinBtn = binding.mainJoinBtn;
         mainLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentJ = new Intent((MainActivity2)getActivity(), JoinActivity.class);
+                Intent intentJ = new Intent(getActivity(), JoinActivity.class);
                 startActivity(intentJ);
             }
         });
