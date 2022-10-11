@@ -33,7 +33,7 @@ public class BenefitActivity extends AppCompatActivity {
 
         Log.d(TAG, "in BenefitActivity");
 
-        //mycursor
+        // mycursor
         adapter = new BenefitAdapter(this, R.layout.adapter_benefit, null);
         lvContacts.setAdapter(adapter);
 
