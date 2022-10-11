@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.HeaderViewListAdapter;
@@ -22,12 +23,15 @@ public class BenefitActivity extends AppCompatActivity {
     //	SimpleCursorAdapter adapter;
     BenefitAdapter adapter;
     final static int UPDATE_ACTIVITY_CODE = 200;
+    final static String TAG = "BenefitActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_benefit_list);
         lvContacts = (ListView)findViewById(R.id.benefitListView);
+
+        Log.d(TAG, "in BenefitActivity");
 
         //mycursor
         adapter = new BenefitAdapter(this, R.layout.adapter_benefit, null);
