@@ -62,7 +62,8 @@ public class MainActivity2 extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_benefit:
-                        intent = new Intent(getApplicationContext(), BenefitActivity.class);
+//                        intent = new Intent(getApplicationContext(), BenefitActivity.class);
+                        intent = new Intent(getApplicationContext(), XAMPPTestActivity.class); // test
                         startActivity(intent);
                         break;
                 }

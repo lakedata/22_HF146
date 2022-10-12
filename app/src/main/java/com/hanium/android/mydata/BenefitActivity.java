@@ -28,6 +28,8 @@ public class BenefitActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_benefit_list);
         lvContacts = (ListView)findViewById(R.id.benefitListView);
 
@@ -106,4 +108,6 @@ public class BenefitActivity extends AppCompatActivity {
 //        cursor 사용 종료
         if (cursor != null) cursor.close();
     }
+
+
 }
