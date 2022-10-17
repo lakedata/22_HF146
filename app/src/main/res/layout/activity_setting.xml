@@ -2,7 +2,7 @@
 
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
 android:id="@+id/settings_fragment"
-android:name="com.hanium.android.mydata.SettingPreferenceFragment"
+android:name="com.hanium.android.mydata.ui.setting.SettingPreferenceFragment"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
     />

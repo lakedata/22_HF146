@@ -1,4 +1,4 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.mypage;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.hanium.android.mydata.R;
 
 import java.io.InputStream;
 

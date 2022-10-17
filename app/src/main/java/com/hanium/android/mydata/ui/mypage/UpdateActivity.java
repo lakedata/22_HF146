@@ -1,4 +1,4 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.mypage;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.hanium.android.mydata.MemberActivity;
+import com.hanium.android.mydata.R;
 
 public class UpdateActivity extends AppCompatActivity {
 

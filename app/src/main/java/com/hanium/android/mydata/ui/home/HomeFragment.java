@@ -42,18 +42,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // chrome
-        Button chromeBtn = binding.chromeBtn;
-        chromeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String packageName = "com.android.chrome";
-                Context context = (MainActivity2)getActivity();
-                Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageName);
-                startActivity(intent);
-            }
-        });
-
         // login
         Button mainLoginBtn = binding.mainLoginBtn;
         mainLoginBtn.setOnClickListener(new View.OnClickListener() {

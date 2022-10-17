@@ -1,14 +1,16 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.mypage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SettingActivity extends AppCompatActivity {
+import com.hanium.android.mydata.R;
+
+public class FavoriteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_favorite);
     }
 }

@@ -1,4 +1,4 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.setting;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences;
@@ -10,6 +10,8 @@ import android.preference.PreferenceScreen;
 import android.widget.BaseAdapter;
 
 import androidx.annotation.Nullable;
+
+import com.hanium.android.mydata.R;
 
 
 public class SettingPreferenceFragment extends PreferenceFragment {

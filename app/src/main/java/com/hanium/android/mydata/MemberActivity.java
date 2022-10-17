@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.hanium.android.mydata.ui.mypage.UpdateActivity;
+
 public class MemberActivity extends AppCompatActivity {
 
     EditText et5, et6;
