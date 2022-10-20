@@ -1,6 +1,5 @@
 package com.hanium.android.mydata.ui.home;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,6 +19,7 @@ import com.hanium.android.mydata.LoginActivity;
 import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.databinding.FragmentHomeBinding;
+
 
 public class HomeFragment extends Fragment {
 
@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         // join
         Button mainJoinBtn = binding.mainJoinBtn;
-        mainLoginBtn.setOnClickListener(new View.OnClickListener() {
+        mainJoinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentJ = new Intent(getActivity(), JoinActivity.class);
@@ -65,25 +65,6 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
-
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.chromeBtn:
-//                String packageName = "com.android.chrome";
-//                Context context = MainActivity2.this;
-//                Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageName);
-//                startActivity(intent);
-//                break;
-//            case R.id.mainLoginBtn:
-//                Intent intentL = new Intent(MainActivity2.this, LoginActivity.class);
-//                startActivity(intentL);
-//                break;
-//            case R.id.mainJoinBtn:
-//                Intent intentJ = new Intent(MainActivity2.this, JoinActivity.class);
-//                startActivity(intentJ);
-//                break;
-//        }
-//    }
 
     @Override
     public void onDestroyView() {

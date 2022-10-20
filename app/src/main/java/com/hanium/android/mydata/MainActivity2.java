@@ -55,44 +55,6 @@ public class MainActivity2 extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-/*
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent intent;
-
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        intent = new Intent(getApplicationContext(), MainActivity2.class); // test
-                        startActivity(intent);
-                        break;
-                    case R.id.nav_benefit:
-//                        intent = new Intent(getApplicationContext(), BenefitActivity.class);
-                        intent = new Intent(getApplicationContext(), XAMPPTestActivity.class); // test
-                        startActivity(intent);
-                        break;
-                    case R.id.nav_map:
-//                        intent = new Intent(getApplicationContext(), .class); // test
-//                        startActivity(intent);
-                        break;
-                    case R.id.nav_bookmark:
-                        break;
-                    case R.id.nav_favBrand:
-                        break;
-//                    case R.id.nav_favApp:
-//                        break;
-                    case R.id.nav_mypage:
-                        intent = new Intent(getApplicationContext(), MyPageActivity.class); // test
-                        startActivity(intent);
-                        break;
-                    case R.id.nav_setting:
-                        intent = new Intent(getApplicationContext(), SettingActivity.class); // test
-                        startActivity(intent);
-                        break;
-                }
-                return true;
-            }
-        });*/
     }
 
     @Override
