@@ -26,11 +26,11 @@ public class XAMPPTestActivity extends AppCompatActivity {
     String myJSON;
 
     private static final String TAG_RESULTS = "result";
-    private static final String TAG_TESTNAME = "testname";
-    private static final String TAG_TESTAGE = "testage";
+    private static final String TAG_USERNAME = "userName";
+    private static final String TAG_USERID = "userID";
 
-    JSONArray tests = null;
-    ArrayList<HashMap<String, String>> testList;
+    JSONArray users = null;
+    ArrayList<HashMap<String, String>> userList;
 
     ListView lvContacts = null;
 
@@ -45,9 +45,9 @@ public class XAMPPTestActivity extends AppCompatActivity {
 
         Log.d(TAG, "in XAMPPTestActivity");
 
-        testList = new ArrayList<HashMap<String, String>>();
+        userList = new ArrayList<HashMap<String, String>>();
 
-        getData("http://172.30.1.14/PHP_connection.php"); // 주소는 수정해야될수도 ......
+        getData("http://172.30.1.79/PHP_connection_user.php"); // 주소는 수정해야될수도 ......
 
     }
 
@@ -55,26 +55,26 @@ public class XAMPPTestActivity extends AppCompatActivity {
 
         try {
             JSONObject jsonObject = new JSONObject(myJSON);
-            tests = jsonObject.getJSONArray(TAG_RESULTS);
+            users = jsonObject.getJSONArray(TAG_RESULTS);
 
-            for (int i = 0; i < tests.length(); i++) {
-                JSONObject jo = tests.getJSONObject(i);
-                String testname = jo.getString(TAG_TESTNAME);
-                String testage = jo.getString(TAG_TESTAGE);
+            for (int i = 0; i < users.length(); i++) {
+                JSONObject jo = users.getJSONObject(i);
+                String username = jo.getString(TAG_USERNAME);
+                String userid = jo.getString(TAG_USERID);
 
-                HashMap<String, String> tests = new HashMap<String, String>();
+                HashMap<String, String> user = new HashMap<String, String>();
 
-                tests.put(TAG_TESTNAME, testname);
-                tests.put(TAG_TESTAGE, testage);
+                user.put(TAG_USERNAME, username);
+                user.put(TAG_USERID, userid);
 
-                Log.d(TAG, "<testname>: " +testname+ "  <testage>: " +testage);
+                Log.d(TAG, "<username>: " +username+ "  <userid>: " +userid);
 
-                testList.add(tests);
+                userList.add(user);
             }
 
             ListAdapter adapter = new SimpleAdapter(
-              XAMPPTestActivity.this, testList, R.layout.adapter_benefit,
-              new String[]{TAG_TESTNAME, TAG_TESTAGE},
+              XAMPPTestActivity.this, userList, R.layout.adapter_benefit,
+              new String[]{TAG_USERNAME, TAG_USERID},
               new int[]{R.id.benefitCategory, R.id.benefitBrandName}
             );
 
