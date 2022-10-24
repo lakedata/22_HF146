@@ -40,39 +40,38 @@ public class LoginActivity extends AppCompatActivity {
                 String userID = loginID.getText().toString();
                 String userPW = loginPW.getText().toString();
 
-                Log.d(TAG, "login click");
-                Log.d(TAG, userID+ " " +userPW);
-
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
 
                             if (success) {
 
-                                String userID = jsonObject.getString( "userID" );
-                                String userPW = jsonObject.getString( "userPW" );
-                                String userName = jsonObject.getString( "userName" );
+                                String userID = jsonObject.getString("userID");
+                                String userPW = jsonObject.getString("userPW");
+                                String userName = jsonObject.getString("userName");
 
-                                Toast.makeText( getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText(getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent( LoginActivity.this, MainActivity2.class );
+                                Intent intent = new Intent(LoginActivity.this, MainActivity2.class );
 
-                                intent.putExtra( "userID", userID );
-                                intent.putExtra( "userPW", userPW );
-                                intent.putExtra( "userName", userName );
+                                intent.putExtra("userID", userID);
+                                intent.putExtra("userPW", userPW);
+                                intent.putExtra("userName", userName);
 
-                                startActivity( intent );
+                                startActivity(intent);
 
                             } else {
-                                Toast.makeText( getApplicationContext(), "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT ).show();
+                                Toast.makeText(getApplicationContext(), "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
                                 return;
                             }
 
                         } catch (Exception e) {
                             e.printStackTrace();
+                            Log.d(TAG, e.getMessage());
                         }
                     }
                 };
@@ -80,6 +79,8 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(userID, userPW, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
+
+                // click -> loginRequest -> responseListener
             }
         });
 
