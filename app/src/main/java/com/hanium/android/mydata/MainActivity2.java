@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -26,6 +27,8 @@ public class MainActivity2 extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMain2Binding binding;
+
+    final static String TAG = "MainActivity2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,13 @@ public class MainActivity2 extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Intent loginIntent = getIntent();
+        String userID = loginIntent.getStringExtra("userID");
+        String userPW = loginIntent.getStringExtra("userPW");
+        String userName = loginIntent.getStringExtra("userName");
+
+        Log.d(TAG, "in MapActivity userID: " +userID+ "userName: " +userName);
 
     }
 

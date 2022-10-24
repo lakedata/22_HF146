@@ -7,7 +7,7 @@
     tools:context=".JoinActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginName"
+        android:id="@+id/joinNameLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -21,13 +21,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="이름" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginID"
+        android:id="@+id/joinIDLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,16 +39,17 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginName">
+        app:layout_constraintTop_toBottomOf="@+id/joinNameLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="아이디" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginPW"
+        android:id="@+id/joinPWLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -58,10 +60,11 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginID"
+        app:layout_constraintTop_toBottomOf="@+id/joinIDLayout"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호"
@@ -69,7 +72,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginPwCheck"
+        android:id="@+id/joinPwCheckLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -80,10 +83,11 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPW"
+        app:layout_constraintTop_toBottomOf="@+id/joinPWLayout"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinPWCheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호 확인"
@@ -91,7 +95,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginEmail"
+        android:id="@+id/joinEmailLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -102,9 +106,10 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPwCheck">
+        app:layout_constraintTop_toBottomOf="@+id/joinPwCheckLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="이메일"
@@ -112,7 +117,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginYear"
+        android:id="@+id/joinYearLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
@@ -120,50 +125,53 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail">
+        app:layout_constraintTop_toBottomOf="@+id/joinEmailLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="년도" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginMonth"
+        android:id="@+id/joinMonthLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/loginYear"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail">
+        app:layout_constraintStart_toEndOf="@+id/joinYearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/joinEmailLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinMonth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="월" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginDay"
+        android:id="@+id/joinDayLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/loginMonth"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail">
+        app:layout_constraintStart_toEndOf="@+id/joinMonthLayout"
+        app:layout_constraintTop_toBottomOf="@+id/joinEmailLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="일" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginPhone"
+        android:id="@+id/joinPhoneLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
@@ -171,9 +179,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginYear">
+        app:layout_constraintTop_toBottomOf="@+id/joinYearLayout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joinPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="전화번호"
@@ -189,10 +198,10 @@
         android:layout_marginTop="14dp"
         android:text="통신사"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginYear" />
+        app:layout_constraintTop_toBottomOf="@+id/joinYearLayout" />
 
     <Spinner
-        android:id="@+id/spCarrier"
+        android:id="@+id/joinTelecom"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -200,7 +209,8 @@
         android:layout_marginTop="8dp"
         android:entries="@array/통신사"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/joinBtn"
@@ -210,6 +220,6 @@
         android:text="회원가입"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/joinPhoneLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

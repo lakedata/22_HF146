@@ -47,7 +47,7 @@ public class XAMPPTestActivity extends AppCompatActivity {
 
         userList = new ArrayList<HashMap<String, String>>();
 
-        getData("http://172.30.1.79/PHP_connection_user.php"); // 주소는 수정해야될수도 ......
+        getData("http://192.168.43.1/PHP_connection_user.php"); // 주소는 수정해야될수도 ......
 
     }
 

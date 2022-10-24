@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mydata.NoActionBar"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".ui.bookmark.BookmarkActivity"
             android:exported="false" />
