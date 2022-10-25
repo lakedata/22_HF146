@@ -10,12 +10,19 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hanium.android.mydata.BenefitModel;
 import com.hanium.android.mydata.R;
+
+import java.util.ArrayList;
 
 public class BenefitActivity extends AppCompatActivity {
 
     ListView lvContacts = null;
 //    ContactDBHelper helper;
+
+    ArrayList<BenefitModel> data = new ArrayList<>();
+
+
     Cursor cursor;
     //	SimpleCursorAdapter adapter;
     BenefitAdapter adapter;
@@ -30,9 +37,22 @@ public class BenefitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_benefit_list);
         lvContacts = (ListView)findViewById(R.id.benefitListView);
 
+        //임시 데이터 만들기
+        data.add(new BenefitModel("카페", "스타벅스", "적립"));
+        data.add(new BenefitModel("카페", "스타벅스2", "적립"));
+        data.add(new BenefitModel("카페", "스타벅스3", "적립"));
+        data.add(new BenefitModel("카페", "스타벅스4", "적립"));
+        data.add(new BenefitModel("카페", "스타벅스5", "적립"));
+        data.add(new BenefitModel("카페", "스타벅스6", "적립"));
+
+        BenefitAdapterSample test = new BenefitAdapterSample(data);
+
+        lvContacts.setAdapter(test);
+
+
         Log.d(TAG, "in BenefitActivity");
 
-        // mycursor
+        /*// mycursor
         adapter = new BenefitAdapter(this, R.layout.adapter_benefit, null);
         lvContacts.setAdapter(adapter);
 
@@ -84,10 +104,10 @@ public class BenefitActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+*/
 
     }
-
+/*
     @Override
     protected void onResume() {
         super.onResume();
@@ -106,5 +126,5 @@ public class BenefitActivity extends AppCompatActivity {
         if (cursor != null) cursor.close();
     }
 
-
+*/
 }
