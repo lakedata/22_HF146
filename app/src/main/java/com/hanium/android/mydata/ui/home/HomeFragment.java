@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.hanium.android.mydata.JoinActivity;
 import com.hanium.android.mydata.LoginActivity;
 import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
+import com.hanium.android.mydata.SearchActivity;
 import com.hanium.android.mydata.databinding.FragmentHomeBinding;
 
 
@@ -60,6 +62,16 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentJ = new Intent(getActivity(), JoinActivity.class);
                 startActivity(intentJ);
+            }
+        });
+
+        // search
+        ImageView searchBtn = binding.searchBtn;
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentS = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intentS);
             }
         });
 

@@ -8,20 +8,6 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/searchBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:onClick="onClick"
-        app:layout_constraintEnd_toStartOf="@+id/myPageBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?android:attr/actionModeWebSearchDrawable"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-        tools:targetApi="lollipop" />
-
-    <ImageView
         android:id="@+id/myPageBtn"
         android:layout_width="48dp"
         android:layout_height="48dp"

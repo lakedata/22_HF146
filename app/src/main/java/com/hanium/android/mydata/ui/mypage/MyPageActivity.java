@@ -1,5 +1,6 @@
 package com.hanium.android.mydata.ui.mypage;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,15 +12,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
 
 import java.io.InputStream;
 
 public class MyPageActivity extends AppCompatActivity {
+
     private static final int RC_SIGN_IN = 1000;
+    final static String TAG = "MyPageActivity";
 
     ImageView backBtn, profile;
     TextView nameTv, emailTv, update, setting;
@@ -42,8 +47,14 @@ public class MyPageActivity extends AppCompatActivity {
         update = (TextView) findViewById(R.id.update);
         setting = (TextView) findViewById(R.id.textView29);
 
-        String name ;
-        String email;
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("userName");
+        if (name != null) {
+            nameTv.setText(name);
+        }
+
+
+        Log.d(TAG, "in Mypage Activity ->" +name);
 
         new DownloadImageTask(profile)
                 .execute("https://lh3.googleusercontent.com/a-/AOh14Gg_QB13iJ8aYHge5SjaCTd9Jg3csmTcdDRf7DcX=s576-p-no");
