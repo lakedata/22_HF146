@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity { // 사용XXXXXXXXXXX !!!!!
 
     public void onClick(View v){
         switch (v.getId()) {
-            case R.id.searchBtn:
-                Intent intentS = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(intentS);
-                break;
+//            case R.id.searchBtn:
+//                Intent intentS = new Intent(MainActivity.this, SearchActivity.class);
+//                startActivity(intentS);
+//                break;
             case R.id.mainLoginBtn3:
                 Intent intentL = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intentL);

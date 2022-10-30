@@ -14,6 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.hanium.android.mydata.ui.map.MapActivity;
+import com.hanium.android.mydata.ui.mypage.MyPageActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,16 +54,18 @@ public class LoginActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPW = jsonObject.getString("userPW");
                                 String userName = jsonObject.getString("userName");
+                                int point = jsonObject.getInt("point");
 
                                 Toast.makeText(getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(LoginActivity.this, MainActivity2.class );
+                                Intent loginIntent = new Intent(LoginActivity.this, MainActivity2.class);
 
-                                intent.putExtra("userID", userID);
-                                intent.putExtra("userPW", userPW);
-                                intent.putExtra("userName", userName);
+                                loginIntent.putExtra("userID", userID);
+                                loginIntent.putExtra("userPW", userPW);
+                                loginIntent.putExtra("userName", userName);
+                                loginIntent.putExtra("point", point);
 
-                                startActivity(intent);
+                                startActivity(loginIntent);
 
                             } else {
                                 Toast.makeText(getApplicationContext(), "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
