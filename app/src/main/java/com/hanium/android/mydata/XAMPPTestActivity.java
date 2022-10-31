@@ -1,4 +1,4 @@
-package com.hanium.android.mydata.ui.benefit;
+package com.hanium.android.mydata;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,8 +8,6 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.hanium.android.mydata.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -26,11 +24,11 @@ public class XAMPPTestActivity extends AppCompatActivity {
     String myJSON;
 
     private static final String TAG_RESULTS = "result";
-    private static final String TAG_USERNAME = "userName";
-    private static final String TAG_USERID = "userID";
+    private static final String TAG_TESTNAME = "testname";
+    private static final String TAG_TESTADDR = "testaddr";
 
-    JSONArray users = null;
-    ArrayList<HashMap<String, String>> userList;
+    JSONArray tests = null;
+    ArrayList<HashMap<String, String>> testList;
 
     ListView lvContacts = null;
 
@@ -45,9 +43,9 @@ public class XAMPPTestActivity extends AppCompatActivity {
 
         Log.d(TAG, "in XAMPPTestActivity");
 
-        userList = new ArrayList<HashMap<String, String>>();
+        testList = new ArrayList<HashMap<String, String>>();
 
-        getData("http://192.168.43.1/PHP_connection_user.php"); // 주소는 수정해야될수도 ......
+        getData("http://192.168.43.1/PHP_connection.php"); // 주소는 수정해야될수도 ......
 
     }
 
@@ -55,26 +53,26 @@ public class XAMPPTestActivity extends AppCompatActivity {
 
         try {
             JSONObject jsonObject = new JSONObject(myJSON);
-            users = jsonObject.getJSONArray(TAG_RESULTS);
+            tests = jsonObject.getJSONArray(TAG_RESULTS);
 
-            for (int i = 0; i < users.length(); i++) {
-                JSONObject jo = users.getJSONObject(i);
-                String username = jo.getString(TAG_USERNAME);
-                String userid = jo.getString(TAG_USERID);
+            for (int i = 0; i < tests.length(); i++) {
+                JSONObject jo = tests.getJSONObject(i);
+                String testname = jo.getString(TAG_TESTNAME);
+                String testaddr = jo.getString(TAG_TESTADDR);
 
-                HashMap<String, String> user = new HashMap<String, String>();
+                HashMap<String, String> test = new HashMap<String, String>();
 
-                user.put(TAG_USERNAME, username);
-                user.put(TAG_USERID, userid);
+                test.put(TAG_TESTNAME, testname);
+                test.put(TAG_TESTADDR, testaddr);
 
-                Log.d(TAG, "<username>: " +username+ "  <userid>: " +userid);
+                Log.d(TAG, "<username>: " +testname+ "  <useraddr>: " +testaddr);
 
-                userList.add(user);
+                testList.add(test);
             }
 
             ListAdapter adapter = new SimpleAdapter(
-              XAMPPTestActivity.this, userList, R.layout.adapter_benefit,
-              new String[]{TAG_USERNAME, TAG_USERID},
+              XAMPPTestActivity.this, testList, R.layout.adapter_benefit,
+              new String[]{TAG_TESTNAME, TAG_TESTADDR},
               new int[]{R.id.benefitCategory, R.id.benefitBrandName}
             );
 

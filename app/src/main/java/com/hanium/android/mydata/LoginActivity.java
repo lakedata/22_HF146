@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPW = jsonObject.getString("userPW");
                                 String userName = jsonObject.getString("userName");
-                                int point = jsonObject.getInt("point");
+                                int point = jsonObject.getInt("userPoint");
 
                                 Toast.makeText(getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
