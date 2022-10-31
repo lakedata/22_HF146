@@ -18,4 +18,8 @@
     <string name="menu_mypage">마이페이지</string>
     <string name="menu_setting">환경설정</string>
 
+    <string name="api_key">AIzaSyCWaO22jcES8EnIes30k4pHn0DhdTmAWJA</string>
+    <string name="init_lat">37.557527</string>
+    <string name="init_lng">126.9244669</string>
+
 </resources>
