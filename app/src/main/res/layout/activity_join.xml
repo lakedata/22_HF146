@@ -37,7 +37,6 @@
             android:id="@+id/joinName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="이름" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,7 +58,6 @@
             android:id="@+id/joinID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="아이디" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,7 +80,6 @@
             android:id="@+id/joinPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="비밀번호"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -106,7 +103,6 @@
             android:id="@+id/joinPWCheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="비밀번호 확인"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -129,7 +125,6 @@
             android:id="@+id/joinEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="이메일"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -149,7 +144,6 @@
             android:id="@+id/joinYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="년도" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -168,7 +162,6 @@
             android:id="@+id/joinMonth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="월" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -187,7 +180,6 @@
             android:id="@+id/joinDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="일" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -206,7 +198,6 @@
             android:id="@+id/joinPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_join_input"
             android:hint="전화번호"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>

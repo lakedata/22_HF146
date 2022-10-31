@@ -29,7 +29,7 @@ public class JoinRequest extends StringRequest {
         map.put("userEmail", userEmail);
         map.put("userTelecom", userTelecom);
         map.put("userPhoneNum", userPhoneNum);
-        map.put("birth", year+"-"+month+"-"+day);
+        map.put("userBirth", year+"-"+month+"-"+day);
     }
 
     protected Map<String, String> getParams() throws AuthFailureError {

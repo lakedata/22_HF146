@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputEditText;
 import com.hanium.android.mydata.ui.map.MapActivity;
 import com.hanium.android.mydata.ui.mypage.MyPageActivity;
 
@@ -21,8 +22,8 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText loginID, loginPW;
-    Button loginBtn;
+    private TextInputEditText loginID, loginPW;
+    private Button loginBtn;
 
     final static String TAG = "LoginActivity";
 
@@ -31,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginID = findViewById(R.id.loginID);
-        loginPW = findViewById(R.id.loginPW);
+        loginID = (TextInputEditText) findViewById(R.id.loginID);
+        loginPW = (TextInputEditText) findViewById(R.id.loginPW);
         loginBtn = findViewById(R.id.loginBtn);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
