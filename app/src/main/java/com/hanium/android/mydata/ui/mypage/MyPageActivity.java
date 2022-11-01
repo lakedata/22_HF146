@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
+import com.hanium.android.mydata.ui.setting.SettingActivity;
 
 import org.w3c.dom.Text;
 
@@ -44,7 +45,7 @@ public class MyPageActivity extends AppCompatActivity {
         nameTv = (TextView)findViewById(R.id.nameTv);
         heart = (TextView)findViewById(R.id.heart);
         update = (TextView)findViewById(R.id.update);
-        setting = (TextView)findViewById(R.id.setting);
+        setting = (TextView)findViewById(R.id.settings);
         profile = (ImageView)findViewById(R.id.profile);
 
 
@@ -87,7 +88,7 @@ public class MyPageActivity extends AppCompatActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FavoriteActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
                 startActivity(intent);
             }
         });
