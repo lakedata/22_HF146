@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
 
+import org.w3c.dom.Text;
+
 import java.io.InputStream;
 
 public class MyPageActivity extends AppCompatActivity {
@@ -26,9 +28,8 @@ public class MyPageActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1000;
     final static String TAG = "MyPageActivity";
 
-    ImageView backBtn, profile;
-    TextView nameTv, emailTv, update, setting;
-    LinearLayout heart;
+    ImageView profile;
+    TextView nameTv, emailTv, heart, update, setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +40,13 @@ public class MyPageActivity extends AppCompatActivity {
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.hide();
 
-        backBtn = (ImageView) findViewById(R.id.btn_back5);
-        emailTv = (TextView) findViewById(R.id.EmailTv);
+        emailTv = (TextView) findViewById(R.id.emailTv);
         nameTv = (TextView)findViewById(R.id.nameTv);
-        heart = (LinearLayout) findViewById(R.id.heartBtn);
+        heart = (TextView)findViewById(R.id.heart);
+        update = (TextView)findViewById(R.id.update);
+        setting = (TextView)findViewById(R.id.setting);
         profile = (ImageView)findViewById(R.id.profile);
-        update = (TextView) findViewById(R.id.update);
-        setting = (TextView) findViewById(R.id.textView29);
+
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("userName");
@@ -64,13 +65,7 @@ public class MyPageActivity extends AppCompatActivity {
 //        emailTv.setText(email);
 
 
-        // 뒤로가기
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+
 
         //즐겨찾기 페이지 액티비티 열기
         heart.setOnClickListener(new View.OnClickListener() {

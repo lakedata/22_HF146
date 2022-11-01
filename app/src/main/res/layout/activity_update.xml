@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/profile"
     tools:context=".ui.mypage.UpdateActivity">
 
 
@@ -12,27 +13,13 @@
         android:layout_width="103dp"
         android:layout_height="48dp"
         android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
         android:layout_marginBottom="40dp"
         android:onClick="onClick"
         android:text="취소"
+        app:backgroundTint="#91C788"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="152dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="165dp"
-        android:text="회원정보 수정"
-        android:textColor="#151515"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name"
@@ -104,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,12 +111,13 @@
         android:layout_width="103dp"
         android:layout_height="48dp"
         android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
         android:layout_marginBottom="88dp"
         android:onClick="onClick"
         android:text="수정"
+        app:backgroundTint="#91C788"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="152dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
