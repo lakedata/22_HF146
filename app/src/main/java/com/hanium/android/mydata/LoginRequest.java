@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest {
 
-    final static private String URL = "http://192.168.38.1/login.php/";//http://192.168.43.1/login.php"; //http://192.168.52.1/login.php" http://172.30.1.12/login.php
+    final static private String URL = "http://192.168.43.1/login.php/";//http://192.168.43.1/login.php"; //http://192.168.52.1/login.php" http://172.30.1.12/login.php
     private Map<String, String> map;
 
     final static String TAG = "LoginActivity";

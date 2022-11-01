@@ -13,7 +13,7 @@ public class JoinRequest extends StringRequest {
 
     final static String TAG = "JoinActivity";
 
-    final static  private String URL = "http://192.168.38.1/register.php";//"http://192.168.43.1/register.php";
+    final static  private String URL = "http://192.168.43.1/register.php";//"http://192.168.43.1/register.php";
     private Map<String, String> map;
 
     public JoinRequest(String userName, String userID, String userPW, String userEmail, String year, String month, String day,
