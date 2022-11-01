@@ -10,6 +10,9 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -32,10 +35,43 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private GoogleMap mGoogleMap;
 
+    int checkFlag = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        LinearLayout categoryLayout1 = findViewById(R.id.category1);
+        LinearLayout categoryLayout2 = findViewById(R.id.category2);
+        LinearLayout categoryLayout3 = findViewById(R.id.category3);
+        categoryLayout1.setVisibility(View.GONE);
+        categoryLayout2.setVisibility(View.GONE);
+        categoryLayout3.setVisibility(View.GONE);
+
+        Button viewCategoryButton = findViewById(R.id.btnViewCategory);
+        viewCategoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkFlag == 0) {
+                    checkFlag = 1;
+                } else {
+                    checkFlag = 0;
+                }
+                if (checkFlag == 0) {
+                    categoryLayout1.setVisibility(View.GONE);
+                    categoryLayout2.setVisibility(View.GONE);
+                    categoryLayout3.setVisibility(View.GONE);
+                } else {
+                    categoryLayout1.setVisibility(View.VISIBLE);
+                    categoryLayout2.setVisibility(View.VISIBLE);
+                    categoryLayout3.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
 
         mapLoad();
     }

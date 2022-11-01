@@ -20,6 +20,7 @@ import com.hanium.android.mydata.LoginActivity;
 import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SearchActivity;
+import com.hanium.android.mydata.XAMPPTestActivity;
 import com.hanium.android.mydata.databinding.FragmentHomeBinding;
 
 
@@ -72,6 +73,16 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intentS = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intentS);
+            }
+        });
+
+        // xampp test
+        Button xampp = binding.xampptest;
+        xampp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentX = new Intent(getActivity(), XAMPPTestActivity.class);
+                startActivity(intentX);
             }
         });
 

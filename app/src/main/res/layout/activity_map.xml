@@ -27,10 +27,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnViewCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FEFFDE"
+                android:textColor="#52734D"
+                android:textStyle="bold"
+                android:text="카테고리 전체 보기" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/category1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -38,29 +58,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="1dp"
-                android:text="Button" />
+                android:backgroundTint="#91C788"
+                android:layout_marginRight="5dp"
+                android:text="베이커리" />
             <Button
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="1dp"
-                android:text="Button" />
+                android:backgroundTint="#91C788"
+                android:layout_marginRight="5dp"
+                android:text="외식" />
             <Button
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="1dp"
-                android:text="Button" />
+                android:backgroundTint="#91C788"
+                android:text="카페&#38;아이스크림" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/category2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -68,22 +91,71 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:text="Button" />
+                android:backgroundTint="#52734D"
+                android:layout_marginRight="5dp"
+                android:text="생활" />
             <Button
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:text="Button" />
+                android:backgroundTint="#52734D"
+                android:layout_marginRight="5dp"
+                android:text="쇼핑몰" />
             <Button
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:text="Button" />
+                android:backgroundTint="#52734D"
+                android:layout_marginRight="5dp"
+                android:text="패션&#38;뷰티" />
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#52734D"
+                android:text="편의점" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/category3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:text="영화" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:text="문화생활" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:text="액티비티" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="테마파크" />
         </LinearLayout>
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
