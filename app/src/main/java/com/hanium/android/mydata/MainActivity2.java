@@ -92,6 +92,7 @@ public class MainActivity2 extends AppCompatActivity {
             nav_header_point.setText(point+ "점 ");
         }
 
+        // 좌측메뉴클릭
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
