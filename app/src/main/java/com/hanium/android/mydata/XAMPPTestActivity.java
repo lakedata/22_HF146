@@ -30,7 +30,7 @@ public class XAMPPTestActivity extends AppCompatActivity {
     JSONArray tests = null;
     ArrayList<HashMap<String, String>> testList;
 
-    ListView lvContacts = null;
+    ListView listView = null;
 
     final static String TAG = "XAMPPTestActivity";
 
@@ -39,7 +39,7 @@ public class XAMPPTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_benefit_list);
-        lvContacts = (ListView)findViewById(R.id.benefitListView);
+        listView = (ListView)findViewById(R.id.benefitListView);
 
         Log.d(TAG, "in XAMPPTestActivity");
 
@@ -76,7 +76,7 @@ public class XAMPPTestActivity extends AppCompatActivity {
               new int[]{R.id.benefitCategory, R.id.benefitBrandName}
             );
 
-            lvContacts.setAdapter(adapter);
+            listView.setAdapter(adapter);
 
         } catch (Exception e) {
             e.printStackTrace();
