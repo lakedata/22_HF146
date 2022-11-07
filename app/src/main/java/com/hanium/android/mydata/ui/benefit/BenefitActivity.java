@@ -57,7 +57,8 @@ public class BenefitActivity extends AppCompatActivity {
 //        adapter = new BenefitAdapter(this, R.layout.adapter_benefit, null);
 //        lvContacts.setAdapter(adapter);
 
-        //		리스트 뷰 클릭 처리
+
+//        		리스트 뷰 클릭 처리
 //        lvContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            Intent intent;
 //            @Override
