@@ -2,6 +2,7 @@ package com.hanium.android.mydata.ui.benefit;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,15 +53,15 @@ public class BenefitActivity extends AppCompatActivity {
 
         Log.d(TAG, "in BenefitActivity");
 
-        /*// mycursor
-        adapter = new BenefitAdapter(this, R.layout.adapter_benefit, null);
-        lvContacts.setAdapter(adapter);
+        // mycursor
+//        adapter = new BenefitAdapter(this, R.layout.adapter_benefit, null);
+//        lvContacts.setAdapter(adapter);
 
         //		리스트 뷰 클릭 처리
-        lvContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            Intent intent;
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+//        lvContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            Intent intent;
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 //                SQLiteDatabase db = helper.getReadableDatabase();
 //                cursor = db.rawQuery("select * from contact_table where _id=" + id, null);
 //                ContactDto dto = new ContactDto();
@@ -74,9 +75,9 @@ public class BenefitActivity extends AppCompatActivity {
 //                intent = new Intent(AllContactsActivity.this, UpdateActivity.class);
 //                intent.putExtra("dto", dto);
 //                startActivityForResult(intent, UPDATE_ACTIVITY_CODE);
-            }
-        });
-
+//            }
+//        });
+/*
 //		리스트 뷰 롱클릭 처리
         lvContacts.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
