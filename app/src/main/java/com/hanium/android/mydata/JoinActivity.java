@@ -26,7 +26,7 @@ public class JoinActivity extends AppCompatActivity {
     final static String TAG = "JoinActivity";
 
     // 아이디, 비번, 이름, 이메일, 통신사, 전화번호, 생년월일, 주소, 포인트(기본값=0)
-    private TextInputEditText joinName, joinID, joinPW, joinPWCheck, joinEmail, joinYear,
+    private TextInputEditText joinName, joinID, joinPW, joinPWCheck, joinEmail, joinAddr, joinYear,
                     joinMonth, joinDay, joinPhone;
     private Spinner joinTele;
     private Button idCheckBtn, joinBtn;
@@ -43,6 +43,7 @@ public class JoinActivity extends AppCompatActivity {
         joinPW = (TextInputEditText) findViewById(R.id.joinPW);
         joinPWCheck = (TextInputEditText) findViewById(R.id.joinPWCheck);
         joinEmail = (TextInputEditText) findViewById(R.id.joinEmail);
+        joinAddr = (TextInputEditText) findViewById(R.id.joinAddr);
         joinYear = (TextInputEditText) findViewById(R.id.joinYear);
         joinMonth = (TextInputEditText) findViewById(R.id.joinMonth);
         joinDay = (TextInputEditText) findViewById(R.id.joinDay);
@@ -107,6 +108,7 @@ public class JoinActivity extends AppCompatActivity {
                 String userPW = joinPW.getText().toString();
                 String pwCheck = joinPWCheck.getText().toString();
                 String userEmail = joinEmail.getText().toString();
+                String userAddr = joinAddr.getText().toString();
                 String year = joinYear.getText().toString();
                 String month = joinMonth.getText().toString();
                 String day = joinDay.getText().toString();
@@ -121,8 +123,8 @@ public class JoinActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (userID.equals("") || userName.equals("") || userPW.equals("") || userEmail.equals("") || year.equals("") ||
-                        month.equals("") || day.equals("") || userTelecom.equals("") || userPhoneNum.equals("")) {
+                if (userID.equals("") || userName.equals("") || userPW.equals("") || userEmail.equals("") || userAddr.equals("") ||
+                        year.equals("") || month.equals("") || day.equals("") || userTelecom.equals("") || userPhoneNum.equals("")) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                     builder.setMessage("모든 항목을 입력해주세요")
@@ -164,7 +166,7 @@ public class JoinActivity extends AppCompatActivity {
                     }
                 };
 
-                JoinRequest joinRequest = new JoinRequest(userName, userID, userPW, userEmail,
+                JoinRequest joinRequest = new JoinRequest(userName, userID, userPW, userEmail, userAddr,
                         year, month, day, userTelecom, userPhoneNum, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(JoinActivity.this);
                 queue.add(joinRequest);
