@@ -158,6 +158,7 @@ public class JoinActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Log.d(TAG, e.getMessage());
+                            Log.d(TAG, "error");
                         }
 
                     }
