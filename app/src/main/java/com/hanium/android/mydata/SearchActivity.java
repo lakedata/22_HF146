@@ -2,6 +2,7 @@ package com.hanium.android.mydata;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,7 +53,7 @@ public class SearchActivity extends AppCompatActivity {
 
         placeList = new ArrayList<HashMap<String, String>>();
 
-        getData("http://192.168.43.1/PHP_connection_place.php");
+//        getData("http://192.168.43.1/PHP_connection_place.php");
 
 
         searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -74,8 +75,7 @@ public class SearchActivity extends AppCompatActivity {
         if (searchText.equals("")) {
             placeList.clear();
         } else {
-            showList();
-            Log.d(TAG, "searching ...");
+            getData("http://192.168.43.1/PHP_connection_place.php?searchText=" +searchText);
         }
 
     }
@@ -111,6 +111,7 @@ public class SearchActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             e.printStackTrace();
+            e.getMessage();
         }
     }
 
