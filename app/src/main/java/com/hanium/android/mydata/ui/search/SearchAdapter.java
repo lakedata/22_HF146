@@ -1,6 +1,5 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.search;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.view.LayoutInflater;
@@ -10,9 +9,7 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hanium.android.mydata.ui.benefit.BenefitAdapter;
-
-import java.util.zip.Inflater;
+import com.hanium.android.mydata.R;
 
 public class SearchAdapter extends CursorAdapter {
 

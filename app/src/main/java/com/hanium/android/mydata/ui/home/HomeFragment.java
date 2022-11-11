@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,11 +15,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.hanium.android.mydata.JoinActivity;
-import com.hanium.android.mydata.LoginActivity;
-import com.hanium.android.mydata.MainActivity2;
-import com.hanium.android.mydata.R;
-import com.hanium.android.mydata.SearchActivity;
-import com.hanium.android.mydata.XAMPPTestActivity;
 import com.hanium.android.mydata.databinding.FragmentHomeBinding;
 
 

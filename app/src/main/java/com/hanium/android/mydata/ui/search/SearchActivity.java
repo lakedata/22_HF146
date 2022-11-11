@@ -1,8 +1,7 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.search;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +10,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import androidx.appcompat.widget.SearchView;
+
+import com.hanium.android.mydata.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,7 +22,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 

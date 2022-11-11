@@ -1,6 +1,5 @@
 package com.hanium.android.mydata;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -33,8 +31,8 @@ import com.hanium.android.mydata.ui.favApp.FavAppActivity;
 import com.hanium.android.mydata.ui.favBrand.FavBrandActivity;
 import com.hanium.android.mydata.ui.map.MapActivity;
 import com.hanium.android.mydata.ui.mypage.MyPageActivity;
+import com.hanium.android.mydata.ui.search.SearchActivity;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
-import com.hanium.android.mydata.ui.setting.SettingPreferenceFragment;
 
 public class MainActivity2 extends AppCompatActivity {
 
