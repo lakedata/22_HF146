@@ -2,11 +2,16 @@ package com.hanium.android.mydata;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +25,8 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.regex.Pattern;
 
 public class JoinActivity extends AppCompatActivity {
 
@@ -100,6 +107,26 @@ public class JoinActivity extends AppCompatActivity {
             }
         });
 
+
+        joinEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Pattern emailPatttern = Patterns.EMAIL_ADDRESS;
+                if(!emailPatttern.matcher(joinEmail.getText().toString()).matches()) {
+                    joinEmail.setError("이메일 형식이 올바르지 않습니다.");
+                    joinEmail.requestFocus();
+                    return;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
+
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -153,7 +180,13 @@ public class JoinActivity extends AppCompatActivity {
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                                 builder.setMessage("비밀번호가 일치하지 않습니다")
-                                        .setPositiveButton("확인", null)
+                                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                joinPWCheck.requestFocus();
+                                                return;
+                                            }
+                                        })
                                         .show();
                             }
 
