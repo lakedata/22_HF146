@@ -1,6 +1,7 @@
 package com.hanium.android.mydata;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,12 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -45,6 +48,9 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        int i = 0;
+        Log.d(TAG, "in Main" +(i++));
+
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -59,6 +65,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+        Menu menu = navigationView.getMenu();
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -81,22 +88,33 @@ public class MainActivity2 extends AppCompatActivity {
         String userName = loginIntent.getStringExtra("userName");
         int point = loginIntent.getIntExtra("point", 0);
 
+
+
         if (userID == null) {
+            menu.findItem(R.id.nav_login).setVisible(true);
+            menu.findItem(R.id.nav_logout).setVisible(false);
+
             nav_header_userName.setText("로그인이 필요합니다");
             nav_header_point.setText("");
         } else {
-
             Log.d(TAG, "in MainActivity2 userID: " +userID+ "userName: " +userName);
+
+            menu.findItem(R.id.nav_login).setVisible(false);
 
             nav_header_userName.setText(userName+ "님");
             nav_header_point.setText(point+ "점 ");
         }
+
 
         // 좌측메뉴클릭
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.nav_login:
+                        Intent toLoginIntent = new Intent(MainActivity2.this, LoginActivity.class);
+                        startActivity(toLoginIntent);
+                        break;
                     case R.id.nav_benefit:
                         Intent benefitIntent = new Intent(MainActivity2.this, BenefitActivity.class);
                         benefitIntent.putExtra("userID", userID);
@@ -124,13 +142,33 @@ public class MainActivity2 extends AppCompatActivity {
                         break;
                     case R.id.nav_mypage:
                         Intent mypageIntent = new Intent(MainActivity2.this, MyPageActivity.class);
-                        mypageIntent.putExtra("userName", userName);
+                        mypageIntent.putExtra("userID", userID);
                         startActivity(mypageIntent);
                         break;
                     case R.id.nav_setting:
                         Intent settingIntent = new Intent(MainActivity2.this, SettingActivity.class);
-                        settingIntent.putExtra("userName", userName);
+                        settingIntent.putExtra("userID", userID);
                         startActivity(settingIntent);
+                        break;
+                    case R.id.nav_logout:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
+                        builder.setMessage("로그아웃하시겠습니까?")
+                                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Toast.makeText(MainActivity2.this, "로그아웃 되었습니다", Toast.LENGTH_LONG).show();
+                                        drawer.close();
+
+                                        loginIntent.removeExtra("userID");
+                                        loginIntent.removeExtra("userName");
+                                        loginIntent.removeExtra("point");
+//                                        Log.d(TAG, "in Main" +(i++)+ "  " +loginIntent.getStringExtra("userName"));
+                                        startActivity(loginIntent);
+                                        return;
+                                    }
+                                })
+                                .setNegativeButton("취소", null)
+                                .show();
                         break;
                 }
                 return true;
@@ -144,6 +182,17 @@ public class MainActivity2 extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_activity2, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intent = new Intent(MainActivity2.this, SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

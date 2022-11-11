@@ -27,7 +27,7 @@ public class SettingPreferenceFragment extends PreferenceFragment {
 
     SharedPreferences prefs;
 
-    Preference logoutPreference;
+    public Preference logoutPreference;
     ListPreference soundPreference;
     ListPreference keywordSoundPreference;
     PreferenceScreen keywordScreen;
@@ -47,7 +47,7 @@ public class SettingPreferenceFragment extends PreferenceFragment {
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("로그아웃하시겠습니까?")
+                builder.setMessage("로그아웃하시겠습니까?")
                         .setPositiveButton("확인", null)
                         .setNegativeButton("취소", null)
                         .show();

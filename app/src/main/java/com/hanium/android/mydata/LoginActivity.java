@@ -88,4 +88,18 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.loginFindPW:
+//                Intent intentP = new Intent(LoginActivity.this, FindPWActivity.class);
+//                startActivity(intentP);
+                break;
+            case R.id.loginToJoin:
+                Intent intentJ = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(intentJ);
+                break;
+        }
+
+    }
 }

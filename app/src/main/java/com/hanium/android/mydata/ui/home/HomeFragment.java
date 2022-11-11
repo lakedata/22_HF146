@@ -45,17 +45,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // login
-        Button mainLoginBtn = binding.mainLoginBtn;
-        mainLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentL = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intentL);
-            }
-        });
-
-
         // join
         Button mainJoinBtn = binding.mainJoinBtn;
         mainJoinBtn.setOnClickListener(new View.OnClickListener() {
@@ -66,25 +55,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // search
-        ImageView searchBtn = binding.searchBtn;
-        searchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentS = new Intent(getActivity(), SearchActivity.class);
-                startActivity(intentS);
-            }
-        });
-
-        // xampp test
-        Button xampp = binding.xampptest;
-        xampp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentX = new Intent(getActivity(), XAMPPTestActivity.class);
-                startActivity(intentX);
-            }
-        });
 
         return root;
     }
