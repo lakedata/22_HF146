@@ -27,7 +27,6 @@ public class SettingPreferenceFragment extends PreferenceFragment {
 
     SharedPreferences prefs;
 
-    public Preference logoutPreference;
     ListPreference soundPreference;
     ListPreference keywordSoundPreference;
     PreferenceScreen keywordScreen;
@@ -37,23 +36,10 @@ public class SettingPreferenceFragment extends PreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.settings_preference);
-        String userID ;
 
-        logoutPreference = (Preference) findPreference("logout");
+
         soundPreference = (ListPreference)findPreference("sound_list");
         keywordScreen = (PreferenceScreen)findPreference("keyword_screen");
-
-        logoutPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage("로그아웃하시겠습니까?")
-                        .setPositiveButton("확인", null)
-                        .setNegativeButton("취소", null)
-                        .show();
-                return true;
-            }
-        });
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 

@@ -21,22 +21,23 @@
 
     <LinearLayout
         android:layout_width="323dp"
-        android:layout_height="162dp"
-        android:layout_marginTop="344dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="32dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
+        app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/heart">
 
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   자주 찾는 브랜드"
+            android:text="자주 찾는 브랜드"
             android:textColor="#000000"
             android:textSize="18dp"
+            android:layout_marginLeft="16dp"
             tools:layout_editor_absoluteX="13dp"
             tools:layout_editor_absoluteY="13dp" />
 
@@ -45,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
             android:text="내 정보 변경"
             android:textColor="#000000"
             android:textSize="18dp"
@@ -84,21 +86,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="이메일"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nameTv" />
 
     <TextView
         android:id="@+id/nameTv"
-        android:layout_width="42dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="212dp"
-        android:text="이름"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,12 +105,23 @@
         android:id="@+id/heart"
         android:layout_width="87dp"
         android:layout_height="29dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
         android:layout_marginTop="276dp"
         android:background="@drawable/heart"
         app:backgroundTint="#91C788"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mypage_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary4"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="마이페이지" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,7 +85,6 @@
         android:text="비밀번호 찾기"
         android:textColor="#52734D"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
@@ -99,7 +98,6 @@
         android:text="회원가입"
         android:textColor="#52734D"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 

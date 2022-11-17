@@ -7,6 +7,10 @@
         android:id="@+id/nav_login"
         android:icon="@android:drawable/star_big_on"
         android:title="@string/menu_login" />
+    <item
+        android:id="@+id/nav_join"
+        android:icon="@android:drawable/stat_notify_chat"
+        android:title="@string/menu_join" />
 
     <item android:title="MyB 혜택">
         <menu>

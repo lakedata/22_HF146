@@ -84,12 +84,13 @@ public class MainActivity2 extends AppCompatActivity {
         Intent loginIntent = getIntent();
         String userID = loginIntent.getStringExtra("userID");
         String userName = loginIntent.getStringExtra("userName");
+        String userPW = loginIntent.getStringExtra("userPW");
         int point = loginIntent.getIntExtra("point", 0);
-
 
 
         if (userID == null) {
             menu.findItem(R.id.nav_login).setVisible(true);
+            menu.findItem(R.id.nav_join).setVisible(true);
             menu.findItem(R.id.nav_logout).setVisible(false);
 
             nav_header_userName.setText("로그인이 필요합니다");
@@ -98,6 +99,7 @@ public class MainActivity2 extends AppCompatActivity {
             Log.d(TAG, "in MainActivity2 userID: " +userID+ "userName: " +userName);
 
             menu.findItem(R.id.nav_login).setVisible(false);
+            menu.findItem(R.id.nav_join).setVisible(false);
 
             nav_header_userName.setText(userName+ "님");
             nav_header_point.setText(point+ "점 ");
@@ -112,6 +114,10 @@ public class MainActivity2 extends AppCompatActivity {
                     case R.id.nav_login:
                         Intent toLoginIntent = new Intent(MainActivity2.this, LoginActivity.class);
                         startActivity(toLoginIntent);
+                        break;
+                    case R.id.nav_join:
+                        Intent toJoinIntent = new Intent(MainActivity2.this, JoinActivity.class);
+                        startActivity(toJoinIntent);
                         break;
                     case R.id.nav_benefit:
                         Intent benefitIntent = new Intent(MainActivity2.this, BenefitActivity.class);
@@ -141,6 +147,8 @@ public class MainActivity2 extends AppCompatActivity {
                     case R.id.nav_mypage:
                         Intent mypageIntent = new Intent(MainActivity2.this, MyPageActivity.class);
                         mypageIntent.putExtra("userID", userID);
+                        mypageIntent.putExtra("userName", userName);
+                        mypageIntent.putExtra("userPW", userPW);
                         startActivity(mypageIntent);
                         break;
                     case R.id.nav_setting:

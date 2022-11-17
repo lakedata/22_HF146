@@ -39,17 +39,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // join
-        Button mainJoinBtn = binding.mainJoinBtn;
-        mainJoinBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentJ = new Intent(getActivity(), JoinActivity.class);
-                startActivity(intentJ);
-            }
-        });
-
-
         return root;
     }
 

@@ -96,6 +96,7 @@ public class JoinActivity extends AppCompatActivity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Log.d(TAG, "----- 아이디 중복 오류 -----");
                             Log.d(TAG, e.getMessage());
                         }
                     }
@@ -163,16 +164,20 @@ public class JoinActivity extends AppCompatActivity {
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        Log.d(TAG, "userPW: " +userPW+ "  pwCheck: " +pwCheck);
+
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
 
-                            if(pwCheck.equals(userPW)) {
+                            if (pwCheck.equals(userPW)) {
                                 if (success) {
                                     Toast.makeText(JoinActivity.this, "회원가입 성공", Toast.LENGTH_LONG).show();
 
                                     Intent intent = new Intent(JoinActivity.this, LoginActivity.class);
                                     startActivity(intent);
+
                                 } else {
                                     Toast.makeText(JoinActivity.this, "회원가입 실패", Toast.LENGTH_LONG).show();
                                     return;
@@ -184,16 +189,16 @@ public class JoinActivity extends AppCompatActivity {
                                             @Override
                                             public void onClick(DialogInterface dialogInterface, int i) {
                                                 joinPWCheck.requestFocus();
-                                                return;
                                             }
                                         })
                                         .show();
+                                return;
                             }
 
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
-                            Log.d(TAG, e.getMessage());
                             Log.d(TAG, "error");
+                            Log.d(TAG, e.getMessage());
                         }
 
                     }
