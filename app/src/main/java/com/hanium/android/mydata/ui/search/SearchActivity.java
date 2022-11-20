@@ -72,6 +72,8 @@ public class SearchActivity extends AppCompatActivity {
 
     public void search(String searchText) {
 
+        placeList.clear();
+
         if (searchText.equals("")) {
             placeList.clear();
         } else {
