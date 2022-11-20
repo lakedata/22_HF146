@@ -85,6 +85,7 @@
 
         <activity
             android:name=".ui.benefit.BenefiltDetailActivity"
+            android:parentActivityName=".ui.benefit.BenefitActivity"
             android:exported="false" />
 
         <activity
