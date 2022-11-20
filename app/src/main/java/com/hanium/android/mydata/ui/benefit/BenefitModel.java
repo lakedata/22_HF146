@@ -1,4 +1,4 @@
-package com.hanium.android.mydata;
+package com.hanium.android.mydata.ui.benefit;
 
 import androidx.annotation.NonNull;
 

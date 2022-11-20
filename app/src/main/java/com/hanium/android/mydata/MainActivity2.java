@@ -33,6 +33,8 @@ import com.hanium.android.mydata.ui.map.MapActivity;
 import com.hanium.android.mydata.ui.mypage.MyPageActivity;
 import com.hanium.android.mydata.ui.search.SearchActivity;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
+import com.hanium.android.mydata.ui.user.JoinActivity;
+import com.hanium.android.mydata.ui.user.LoginActivity;
 
 public class MainActivity2 extends AppCompatActivity {
 

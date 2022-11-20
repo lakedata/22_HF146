@@ -7,7 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hanium.android.mydata.BenefitModel;
 import com.hanium.android.mydata.R;
 
 import java.util.List;

@@ -1,35 +1,22 @@
 package com.hanium.android.mydata.ui.mypage;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-import com.hanium.android.mydata.LoginActivity;
-import com.hanium.android.mydata.MainActivity2;
+import com.hanium.android.mydata.ui.user.LoginActivity;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
-
-import org.w3c.dom.Text;
-
-import java.io.InputStream;
 
 public class MyPageActivity extends AppCompatActivity {
 

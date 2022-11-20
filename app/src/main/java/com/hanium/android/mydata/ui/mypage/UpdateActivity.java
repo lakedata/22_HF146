@@ -1,10 +1,8 @@
 package com.hanium.android.mydata.ui.mypage;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +15,6 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.hanium.android.mydata.JoinActivity;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
 

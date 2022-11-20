@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hanium.android.mydata.ui.user.JoinActivity;
+import com.hanium.android.mydata.ui.user.LoginActivity;
+
 public class MainActivity extends AppCompatActivity { // 사용XXXXXXXXXXX !!!!!!!!!!!!!!!!!!!!!!!
     @Override
     protected void onCreate(Bundle savedInstanceState) {

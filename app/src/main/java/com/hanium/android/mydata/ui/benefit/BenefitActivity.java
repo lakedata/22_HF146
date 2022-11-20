@@ -2,7 +2,6 @@ package com.hanium.android.mydata.ui.benefit;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.hanium.android.mydata.BenefitModel;
 import com.hanium.android.mydata.R;
 
 import java.util.ArrayList;

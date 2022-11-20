@@ -68,11 +68,11 @@
             android:exported="false" />
 
         <activity
-            android:name=".JoinActivity"
+            android:name=".ui.user.JoinActivity"
             android:exported="false" />
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.user.LoginActivity"
             android:exported="false" />
 
         <activity
