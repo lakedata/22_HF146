@@ -58,13 +58,12 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Toast.makeText(getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
+                                SharedPreference.setUserID(LoginActivity.this, userID);
+                                SharedPreference.setUserName(LoginActivity.this, userName);
+                                SharedPreference.setUserPW(LoginActivity.this, userPW);
+                                SharedPreference.setUserPoint(LoginActivity.this, point);
+
                                 Intent loginIntent = new Intent(LoginActivity.this, MainActivity2.class);
-
-                                loginIntent.putExtra("userID", userID);
-                                loginIntent.putExtra("userPW", userPW);
-                                loginIntent.putExtra("userName", userName);
-                                loginIntent.putExtra("point", point);
-
                                 startActivity(loginIntent);
 
                             } else {

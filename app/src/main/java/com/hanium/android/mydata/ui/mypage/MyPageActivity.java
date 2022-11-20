@@ -24,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.hanium.android.mydata.LoginActivity;
 import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
+import com.hanium.android.mydata.SharedPreference;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
 
 import org.w3c.dom.Text;
@@ -63,10 +64,10 @@ public class MyPageActivity extends AppCompatActivity {
         profile = (ImageView)findViewById(R.id.profile);
 
 
-        Intent intent = getIntent();
-        id = intent.getStringExtra("userID");
-        name = intent.getStringExtra("userName");
-        pw = intent.getStringExtra("userPW");
+        id = SharedPreference.getUserID(MyPageActivity.this);
+        name = SharedPreference.getUserName(MyPageActivity.this);
+        pw = SharedPreference.getUserPW(MyPageActivity.this);
+
 
         if (name != null) {
             nameTv.setText(name);
@@ -128,10 +129,7 @@ public class MyPageActivity extends AppCompatActivity {
 
                 } else {
                     Intent intent = new Intent(MyPageActivity.this, UpdateActivity.class);
-                    intent.putExtra("userID", id);
-                    intent.putExtra("userName", name);
-                    intent.putExtra("userPW", pw);
-                    startActivityForResult(intent, RC_SIGN_IN);
+                    startActivity(intent);
                 }
             }
         });
@@ -173,26 +171,5 @@ public class MyPageActivity extends AppCompatActivity {
         }
     }
 */
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RC_SIGN_IN) {
-            switch (resultCode) {
-                case RESULT_OK:
-                    id = data.getStringExtra("userID");
-                    name = data.getStringExtra("userName");
-                    pw = data.getStringExtra("userPW");
-
-                    nameTv.setText(name);
-
-                    Log.d(TAG, "id: " +id+ "  name: " +name+ "  pw: " +pw);
-
-                    break;
-                case RESULT_CANCELED:
-                    Log.d(TAG, "canceled");
-                    break;
-            }
-        }
-    }
 }

@@ -81,23 +81,21 @@ public class MainActivity2 extends AppCompatActivity {
         TextView nav_header_point = (TextView) nav_header_view.findViewById(R.id.nav_header_point);
 
 
-        Intent loginIntent = getIntent();
-        String userID = loginIntent.getStringExtra("userID");
-        String userName = loginIntent.getStringExtra("userName");
-        String userPW = loginIntent.getStringExtra("userPW");
-        int point = loginIntent.getIntExtra("point", 0);
+        String userName = SharedPreference.getUserName(MainActivity2.this);
+        String userID = SharedPreference.getUserID(MainActivity2.this);
+        String userPW = SharedPreference.getUserPW(MainActivity2.this);
+        int point = SharedPreference.getUserPoint(MainActivity2.this);
 
 
-        if (userID == null) {
+        if (SharedPreference.getUserID(MainActivity2.this).length() == 0) {
             menu.findItem(R.id.nav_login).setVisible(true);
             menu.findItem(R.id.nav_join).setVisible(true);
             menu.findItem(R.id.nav_logout).setVisible(false);
 
             nav_header_userName.setText("로그인이 필요합니다");
             nav_header_point.setText("");
-        } else {
-            Log.d(TAG, "in MainActivity2 userID: " +userID+ "userName: " +userName);
 
+        } else {
             menu.findItem(R.id.nav_login).setVisible(false);
             menu.findItem(R.id.nav_join).setVisible(false);
 
@@ -147,8 +145,6 @@ public class MainActivity2 extends AppCompatActivity {
                     case R.id.nav_mypage:
                         Intent mypageIntent = new Intent(MainActivity2.this, MyPageActivity.class);
                         mypageIntent.putExtra("userID", userID);
-                        mypageIntent.putExtra("userName", userName);
-                        mypageIntent.putExtra("userPW", userPW);
                         startActivity(mypageIntent);
                         break;
                     case R.id.nav_setting:
@@ -163,13 +159,11 @@ public class MainActivity2 extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         Toast.makeText(MainActivity2.this, "로그아웃 되었습니다", Toast.LENGTH_LONG).show();
-                                        drawer.close();
 
-                                        loginIntent.removeExtra("userID");
-                                        loginIntent.removeExtra("userName");
-                                        loginIntent.removeExtra("point");
-//                                        Log.d(TAG, "in Main" +(i++)+ "  " +loginIntent.getStringExtra("userName"));
-                                        startActivity(loginIntent);
+                                        SharedPreference.clearUser(MainActivity2.this);
+                                        Intent logoutIntent = new Intent(MainActivity2.this, MainActivity2.class);
+                                        startActivity(logoutIntent);
+
                                         return;
                                     }
                                 })

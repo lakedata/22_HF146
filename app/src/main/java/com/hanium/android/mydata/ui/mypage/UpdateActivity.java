@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.hanium.android.mydata.JoinActivity;
 import com.hanium.android.mydata.R;
+import com.hanium.android.mydata.SharedPreference;
 
 import org.json.JSONObject;
 
@@ -29,7 +30,6 @@ public class UpdateActivity extends AppCompatActivity {
 
     EditText updateName, updateID, updatePW, updatePW2;
 
-    private Intent intent;
     private String id, name, pw;
     private Button updateBtn, updateCancelBtn;
 
@@ -38,10 +38,11 @@ public class UpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        intent = getIntent();
-        id = intent.getStringExtra("userID");
-        name = intent.getStringExtra("userName");
-        pw = intent.getStringExtra("userPW");
+
+        id = SharedPreference.getUserID(UpdateActivity.this);
+        name = SharedPreference.getUserName(UpdateActivity.this);
+        pw = SharedPreference.getUserPW(UpdateActivity.this);
+
 
         updateName = findViewById(R.id.update_name);
         updateID = findViewById(R.id.update_id);
@@ -64,20 +65,6 @@ public class UpdateActivity extends AppCompatActivity {
                 String upPW = updatePW.getText().toString();
                 String upPW2 = updatePW2.getText().toString();
 
-                Log.d(TAG, "id: " +id+ "    upID: " +upID);
-                Log.d(TAG, "name: " +name+ "    upID: " +upName);
-                Log.d(TAG, "pw: " +pw+ "    upID: " +upPW);
-
-//                if(et3.equals(et4)) {
-//                    Intent upIntent = new Intent(this, MemberActivity.class);
-//                    upIntent.putExtra("name", upName);
-//                    upIntent.putExtra("id", upId);
-//                    upIntent.putExtra("password", upPW);
-//                    startActivityForResult(upIntent, CALL_MEMBERACTIVITY);}
-//                else {
-//
-//                }
-
                 if (upID.equals("") || upName.equals("") || upPW.equals("") || upPW2.equals("")) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(UpdateActivity.this);
@@ -98,12 +85,13 @@ public class UpdateActivity extends AppCompatActivity {
                                 if (success) {
                                     Toast.makeText(UpdateActivity.this, "정보를 성공적으로 수정하였습니다.", Toast.LENGTH_LONG).show();
 
-                                    Intent upIntent = new Intent();
-                                    upIntent.putExtra("userID", upID);
-                                    upIntent.putExtra("userName", upName);
-                                    upIntent.putExtra("userPW", upPW);
+                                    SharedPreference.setUserID(UpdateActivity.this, upID);
+                                    SharedPreference.setUserName(UpdateActivity.this, upName);
+                                    SharedPreference.setUserPW(UpdateActivity.this, upPW);
 
-                                    setResult(RESULT_OK, upIntent);
+                                    Intent upIntent = new Intent(UpdateActivity.this, MyPageActivity.class);
+                                    startActivity(upIntent);
+
                                     finish();
 
                                 } else {
@@ -141,31 +129,14 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(UpdateActivity.this, "정보 수정을 취소합니다.", Toast.LENGTH_LONG).show();
-                setResult(RESULT_CANCELED);
+
+                Intent upIntent = new Intent(UpdateActivity.this, MyPageActivity.class);
+                startActivity(upIntent);
+
                 finish();
             }
         });
     }
 
-    /*
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch(requestCode) {
-            case CALL_MEMBERACTIVITY:
-                if(resultCode == RESULT_OK) {
-                    String name = data.getStringExtra("name");
-                    String id = data.getStringExtra("id");
-                    String password = data.getStringExtra("password");
-
-                    updateName.setText(name);
-                    updateID.setText(id);
-                    updatePW.setText(password);
-                }
-                break;
-        }
-    }
-    */
 
 }
