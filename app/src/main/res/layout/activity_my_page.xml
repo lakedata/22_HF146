@@ -22,19 +22,18 @@
     <LinearLayout
         android:layout_width="329dp"
         android:layout_height="222dp"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="348dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="   자주 찾는 브랜드"
+            android:layout_width="291dp"
+            android:layout_height="40dp"
+            android:text="자주 찾는 브랜드"
             android:textColor="#000000"
             android:textSize="18dp"
             tools:layout_editor_absoluteX="13dp"
@@ -42,9 +41,9 @@
 
         <TextView
             android:id="@+id/update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_width="275dp"
+            android:layout_height="35dp"
+
             android:text="내 정보 변경"
             android:textColor="#000000"
             android:textSize="18dp"
@@ -53,11 +52,8 @@
 
         <TextView
             android:id="@+id/settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:text="환경설정"
             android:textColor="#000000"
             android:textSize="18dp"
@@ -66,11 +62,8 @@
 
         <TextView
             android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:text="로그아웃"
             android:textColor="#000000"
             android:textSize="18dp"
@@ -79,9 +72,9 @@
 
         <TextView
             android:id="@+id/withdraw"
-            android:layout_width="101dp"
-            android:layout_height="34dp"
-            android:text="    회원탈퇴"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="회원탈퇴"
             android:textColor="#000000"
             android:textSize="18dp"
             tools:layout_editor_absoluteX="-39dp"
