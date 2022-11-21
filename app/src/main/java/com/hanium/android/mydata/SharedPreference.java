@@ -64,7 +64,7 @@ public class SharedPreference {
     }
 
 
-    public static void setUserPoint (Context context, int userPoint) {
+    public static void setUserPoint (Context context, Integer userPoint) {
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
         editor.putInt(PREF_USER_POINT, userPoint);
         editor.commit();

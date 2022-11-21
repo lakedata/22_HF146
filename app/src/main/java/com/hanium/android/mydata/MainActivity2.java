@@ -33,7 +33,6 @@ import com.hanium.android.mydata.ui.map.MapActivity;
 import com.hanium.android.mydata.ui.mypage.MyPageActivity;
 import com.hanium.android.mydata.ui.search.SearchActivity;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
-import com.hanium.android.mydata.ui.user.JoinActivity;
 import com.hanium.android.mydata.ui.user.LoginActivity;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -86,23 +85,24 @@ public class MainActivity2 extends AppCompatActivity {
         String userName = SharedPreference.getUserName(MainActivity2.this);
         String userID = SharedPreference.getUserID(MainActivity2.this);
         String userPW = SharedPreference.getUserPW(MainActivity2.this);
-        int point = SharedPreference.getUserPoint(MainActivity2.this);
+        String userEmail = SharedPreference.getUserEmail(MainActivity2.this);
+        // int point = loginIntent.getIntExtra("point", 0);
 
 
-        if (SharedPreference.getUserID(MainActivity2.this).length() == 0) {
+
+        if (userID == null) {
             menu.findItem(R.id.nav_login).setVisible(true);
-            menu.findItem(R.id.nav_join).setVisible(true);
             menu.findItem(R.id.nav_logout).setVisible(false);
 
             nav_header_userName.setText("로그인이 필요합니다");
             nav_header_point.setText("");
-
         } else {
+            Log.d(TAG, "in MainActivity2 userID: " +userID+ "userName: " +userName);
+
             menu.findItem(R.id.nav_login).setVisible(false);
-            menu.findItem(R.id.nav_join).setVisible(false);
 
             nav_header_userName.setText(userName+ "님");
-            nav_header_point.setText(point+ "점 ");
+        //    nav_header_point.setText(point+ "점 ");
         }
 
 
@@ -114,10 +114,6 @@ public class MainActivity2 extends AppCompatActivity {
                     case R.id.nav_login:
                         Intent toLoginIntent = new Intent(MainActivity2.this, LoginActivity.class);
                         startActivity(toLoginIntent);
-                        break;
-                    case R.id.nav_join:
-                        Intent toJoinIntent = new Intent(MainActivity2.this, JoinActivity.class);
-                        startActivity(toJoinIntent);
                         break;
                     case R.id.nav_benefit:
                         Intent benefitIntent = new Intent(MainActivity2.this, BenefitActivity.class);
@@ -161,12 +157,14 @@ public class MainActivity2 extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         Toast.makeText(MainActivity2.this, "로그아웃 되었습니다", Toast.LENGTH_LONG).show();
+                                        drawer.close();
 
                                         SharedPreference.clearUser(MainActivity2.this);
                                         Intent logoutIntent = new Intent(MainActivity2.this, MainActivity2.class);
                                         startActivity(logoutIntent);
 
                                         return;
+
                                     }
                                 })
                                 .setNegativeButton("취소", null)
@@ -176,6 +174,7 @@ public class MainActivity2 extends AppCompatActivity {
                 return true;
             }
         });
+
 
     }
 

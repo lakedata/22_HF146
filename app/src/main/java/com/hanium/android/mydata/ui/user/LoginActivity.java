@@ -53,14 +53,15 @@ public class LoginActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPW = jsonObject.getString("userPW");
                                 String userName = jsonObject.getString("userName");
-                                int point = jsonObject.getInt("userPoint");
+                                String userEmail = jsonObject.getString("userEmail");
+//                                int point = jsonObject.getInt("userPoint");
 
                                 Toast.makeText(getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
                                 SharedPreference.setUserID(LoginActivity.this, userID);
                                 SharedPreference.setUserName(LoginActivity.this, userName);
                                 SharedPreference.setUserPW(LoginActivity.this, userPW);
-                                SharedPreference.setUserPoint(LoginActivity.this, point);
+               //                 SharedPreference.setUserPoint(LoginActivity.this, point);
 
                                 Intent loginIntent = new Intent(LoginActivity.this, MainActivity2.class);
                                 startActivity(loginIntent);

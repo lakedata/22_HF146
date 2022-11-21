@@ -7,6 +7,7 @@ public class BenefitModel { //sample
     private String category;
     private String brandName;
     private String benefitKind;
+    private int favor=0;
 
     public BenefitModel(String category, String brandName, String benefitKind) {
         this.category = category;
@@ -41,5 +42,10 @@ public class BenefitModel { //sample
     @Override
     public String toString() {
         return "benefit = " + brandName + ", " + category + ", " + benefitKind;
+    }
+
+
+    public int getFavor() {
+        return favor;
     }
 }
