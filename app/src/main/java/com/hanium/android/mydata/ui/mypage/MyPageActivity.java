@@ -56,27 +56,23 @@ public class MyPageActivity extends AppCompatActivity {
         pw = SharedPreference.getUserPW(MyPageActivity.this);
 
 
-        if (name != null) {
+        if (name.length() != 0) {
+            Log.d(TAG, "in Mypage " +name);
             nameTv.setText(name);
         } else {
+            Log.d(TAG, "in Mypage need login");
             nameTv.setText("로그인이 필요합니다");
         }
 
-        Log.d(TAG, "in Mypage Activity ->" +name);
-
 //        new DownloadImageTask(profile)
 //                .execute("https://lh3.googleusercontent.com/a-/AOh14Gg_QB13iJ8aYHge5SjaCTd9Jg3csmTcdDRf7DcX=s576-p-no");
-
-        //DB에서 name, email정보를 불러와 출력
-//        nameTv.setText(name);
-//        emailTv.setText(email);
 
 
         //즐겨찾기 페이지 액티비티 열기
         heart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (name == null) {
+                if (name.length() == 0) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MyPageActivity.this);
                     builder.setMessage("로그인이 필요한 페이지입니다.\n로그인 페이지로 이동하시겠습니까?")
                             .setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -100,7 +96,7 @@ public class MyPageActivity extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (name == null) {
+                if (name.length() == 0) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MyPageActivity.this);
                     builder.setMessage("로그인이 필요한 페이지입니다.\n로그인 페이지로 이동하시겠습니까?")
                             .setPositiveButton("확인", new DialogInterface.OnClickListener() {
