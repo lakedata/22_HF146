@@ -2,9 +2,12 @@ package com.hanium.android.mydata.ui.search;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -12,6 +15,8 @@ import android.widget.SimpleAdapter;
 import androidx.appcompat.widget.SearchView;
 
 import com.hanium.android.mydata.R;
+import com.hanium.android.mydata.ui.benefit.BenefiltDetailActivity;
+import com.hanium.android.mydata.ui.benefit.BenefitActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -66,6 +71,17 @@ public class SearchActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String searchText) {
                 search(searchText);
                 return true;
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent(SearchActivity.this, BenefiltDetailActivity.class);
+                // Send the position number to Detail Activity too.
+                intent.putExtra("position", position);
+                // Run the process
+                startActivity(intent);
             }
         });
     }
