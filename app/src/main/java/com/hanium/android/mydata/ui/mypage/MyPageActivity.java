@@ -1,42 +1,33 @@
 package com.hanium.android.mydata.ui.mypage;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 
-import com.hanium.android.mydata.MainActivity2;
+import com.hanium.android.mydata.ui.user.LoginActivity;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
-import com.hanium.android.mydata.ui.user.LoginActivity;
-
-import org.w3c.dom.Text;
-
-import java.io.InputStream;
 
 public class MyPageActivity extends AppCompatActivity {
 
-    private static final int RC_SIGN_IN = 1000;
+    private static final int RC_SIGN_IN = 100;
     final static String TAG = "MyPageActivity";
 
     ImageView profile;
-    TextView nameTv, emailTv, heart, update, setting, logout, withdraw;
+    TextView nameTv, emailTv, heart, update, setting;
 
-    private String id, name, pw, email;
+    private String id, name, pw;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,38 +37,38 @@ public class MyPageActivity extends AppCompatActivity {
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.hide();
 
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.mypage_toolbar);
+        setSupportActionBar(mToolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기
+
+
         emailTv = (TextView) findViewById(R.id.emailTv);
         nameTv = (TextView)findViewById(R.id.nameTv);
         heart = (TextView)findViewById(R.id.heart);
         update = (TextView)findViewById(R.id.update);
         setting = (TextView)findViewById(R.id.settings);
         profile = (ImageView)findViewById(R.id.profile);
-        logout = (TextView)findViewById(R.id.logout);
-        withdraw = (TextView)findViewById(R.id.withdraw);
+
 
         id = SharedPreference.getUserID(MyPageActivity.this);
         name = SharedPreference.getUserName(MyPageActivity.this);
         pw = SharedPreference.getUserPW(MyPageActivity.this);
-        email = SharedPreference.getUserEmail(MyPageActivity.this);
 
-        try {
-            if (name.length() != 0) {
-                Log.d(TAG, "in Mypage " + name);
-                nameTv.setText(name);
-                emailTv.setText(email);
-            } else{
-                Log.d(TAG, "in Mypage need login");
-                nameTv.setText("로그인이 필요합니다");
-                emailTv.setText("로그인이 필요합니다");
-            }
-        }catch (NullPointerException e){
 
+        if (name.length() != 0) {
+            Log.d(TAG, "in Mypage " +name);
+            nameTv.setText(name);
+        } else {
+            Log.d(TAG, "in Mypage need login");
+            nameTv.setText("로그인이 필요합니다");
         }
-        new DownloadImageTask(profile)
-                .execute("https://lh3.googleusercontent.com/a-/AOh14Gg_QB13iJ8aYHge5SjaCTd9Jg3csmTcdDRf7DcX=s576-p-no");
+
+//        new DownloadImageTask(profile)
+//                .execute("https://lh3.googleusercontent.com/a-/AOh14Gg_QB13iJ8aYHge5SjaCTd9Jg3csmTcdDRf7DcX=s576-p-no");
 
 
-
+        //즐겨찾기 페이지 액티비티 열기
         heart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,8 +92,6 @@ public class MyPageActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +117,6 @@ public class MyPageActivity extends AppCompatActivity {
             }
         });
 
-
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,35 +124,9 @@ public class MyPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new AlertDialog.Builder(MyPageActivity.this)
-                        .setTitle("로그아웃").setMessage("로그아웃 하시겠습니까?")
-                        .setPositiveButton("로그아웃", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                Intent i = new Intent(MyPageActivity.this, LoginActivity.class);
-                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                                startActivity(i);
-                            }
-                        })
-                        .setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
 
-                            }
-                        })
-                        .show();
-            }
-        });
-        withdraw.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SettingActivity2.class);
-                startActivity(intent);
-            }
-        });
-   }
-
+    }
+/*
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
@@ -190,4 +152,7 @@ public class MyPageActivity extends AppCompatActivity {
             //Glide.with(getApplicationContext()).load(result).circleCrop().into(bmImage);
 //            bmImage.setImageBitmap(result);
         }
-    }}
+    }
+*/
+
+}

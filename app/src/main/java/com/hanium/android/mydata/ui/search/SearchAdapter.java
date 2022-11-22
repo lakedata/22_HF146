@@ -39,13 +39,15 @@ public class SearchAdapter extends CursorAdapter {
         SearchAdapter.ViewHolder holder = (SearchAdapter.ViewHolder) view.getTag();
 
         if (holder.tvName == null) {
-            holder.tvCategory = view.findViewById(R.id.searchCategory);
+            holder.tvCategory1 = view.findViewById(R.id.searchCategory1);
+            holder.tvCategory2 = view.findViewById(R.id.searchCategory2);
             holder.tvName = view.findViewById(R.id.searchBrandName);
             holder.tvForm = view.findViewById(R.id.searchForm);
             holder.ivImage = view.findViewById(R.id.searchBrandImage);
         }
 
-        holder.tvCategory.setText("카테고리");
+        holder.tvCategory1.setText("카테고리1");
+        holder.tvCategory2.setText("카테고리2");
         holder.tvName.setText("장소이름");
         holder.tvForm.setText("할인 / 적립 / etc");
 
@@ -54,13 +56,15 @@ public class SearchAdapter extends CursorAdapter {
     static class ViewHolder {
 
         public ViewHolder() {
-            tvCategory = null;
+            tvCategory1 = null;
+            tvCategory2 = null;
             tvName = null;
             tvForm = null;
             ivImage = null;
         }
 
-        TextView tvCategory;
+        TextView tvCategory1;
+        TextView tvCategory2;
         TextView tvName;
         TextView tvForm;
         ImageView ivImage;

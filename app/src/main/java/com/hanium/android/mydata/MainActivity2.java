@@ -86,12 +86,13 @@ public class MainActivity2 extends AppCompatActivity {
         String userID = SharedPreference.getUserID(MainActivity2.this);
         String userPW = SharedPreference.getUserPW(MainActivity2.this);
         String userEmail = SharedPreference.getUserEmail(MainActivity2.this);
-        // int point = loginIntent.getIntExtra("point", 0);
+        int point = SharedPreference.getUserPoint(MainActivity2.this);
 
 
 
-        if (userID == null) {
+        if (userID.length() == 0) {
             menu.findItem(R.id.nav_login).setVisible(true);
+            menu.findItem(R.id.nav_join).setVisible(true);
             menu.findItem(R.id.nav_logout).setVisible(false);
 
             nav_header_userName.setText("로그인이 필요합니다");
@@ -100,9 +101,10 @@ public class MainActivity2 extends AppCompatActivity {
             Log.d(TAG, "in MainActivity2 userID: " +userID+ "userName: " +userName);
 
             menu.findItem(R.id.nav_login).setVisible(false);
+            menu.findItem(R.id.nav_join).setVisible(false);
 
             nav_header_userName.setText(userName+ "님");
-        //    nav_header_point.setText(point+ "점 ");
+            nav_header_point.setText(point+ "점 ");
         }
 
 

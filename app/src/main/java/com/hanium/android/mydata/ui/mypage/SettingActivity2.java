@@ -11,8 +11,8 @@ import com.hanium.android.mydata.R;
 
 public class SettingActivity2 extends AppCompatActivity {
 
-
     TextView withdraw;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

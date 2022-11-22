@@ -29,6 +29,10 @@
             android:value="@string/api_key" />
 
         <activity
+            android:name=".ui.search.SearchDetailActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.bookmark.BookmarkActivity"
             android:exported="false" />
         <activity

@@ -15,8 +15,6 @@ import android.widget.SimpleAdapter;
 import androidx.appcompat.widget.SearchView;
 
 import com.hanium.android.mydata.R;
-import com.hanium.android.mydata.ui.benefit.BenefiltDetailActivity;
-import com.hanium.android.mydata.ui.benefit.BenefitActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,16 +33,22 @@ public class SearchActivity extends AppCompatActivity {
     String myJSON;
 
     private static final String TAG_RESULTS = "result";
-    private static final String TAG_PLACENAME = "pName";
-    private static final String TAG_PLACECATEGORY = "pCategory";
+    private static final String TAG_BRANDID = "brandID";
+    private static final String TAG_BRANDNAME = "bName";
+    private static final String TAG_BRANDCATEGORY1 = "bCategory1";
+    private static final String TAG_BRANDCATEGORY2 = "bCategory2";
+    private static final String TAG_BRANDBESTPROD = "bBestProd";
+    private static final String TAG_BRANDEXTRAINFO = "bExtraInfo";
 
-    JSONArray places = null;
-    ArrayList<HashMap<String, String>> placeList;
+    JSONArray brands = null;
+    ArrayList<HashMap<String, String>> brandList;
 
     private SearchView searchview;
     private ListView listView;
 
     private SearchAdapter searchAdapter;
+
+    private String bID;
 
 
     @Override
@@ -56,9 +60,7 @@ public class SearchActivity extends AppCompatActivity {
         searchview = findViewById(R.id.searchBar);
         listView = findViewById(R.id.search_listview);
 
-        placeList = new ArrayList<HashMap<String, String>>();
-
-//        getData("http://192.168.43.1/PHP_connection_place.php");
+        brandList = new ArrayList<HashMap<String, String>>();
 
 
         searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -77,10 +79,16 @@ public class SearchActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(SearchActivity.this, BenefiltDetailActivity.class);
-                // Send the position number to Detail Activity too.
-                intent.putExtra("position", position);
-                // Run the process
+                Intent intent = new Intent(SearchActivity.this, SearchDetailActivity.class);
+
+                intent.putExtra("placeID", brandList.get(position).get(TAG_BRANDID));
+                intent.putExtra("bName", brandList.get(position).get(TAG_BRANDNAME));
+                intent.putExtra("bCategory1", brandList.get(position).get(TAG_BRANDCATEGORY1));
+                intent.putExtra("bCategory2", brandList.get(position).get(TAG_BRANDCATEGORY2));
+                intent.putExtra("bBestProd", brandList.get(position).get(TAG_BRANDBESTPROD));
+                intent.putExtra("bExtraInfo", brandList.get(position).get(TAG_BRANDEXTRAINFO));
+
+//                Log.d(TAG, "click item ID: " +placeList.get(position).get(TAG_PLACEID));
                 startActivity(intent);
             }
         });
@@ -88,12 +96,12 @@ public class SearchActivity extends AppCompatActivity {
 
     public void search(String searchText) {
 
-        placeList.clear();
+        brandList.clear();
 
         if (searchText.equals("")) {
-            placeList.clear();
+            brandList.clear();
         } else {
-            getData("http://192.168.43.1/PHP_connection_place.php?searchText=" +searchText);
+            getData("http://192.168.43.1/PHP_connection_brand.php?searchText=" +searchText);
         }
 
     }
@@ -102,27 +110,36 @@ public class SearchActivity extends AppCompatActivity {
 
         try {
             JSONObject jsonObject = new JSONObject(myJSON);
-            places = jsonObject.getJSONArray(TAG_RESULTS);
+            brands = jsonObject.getJSONArray(TAG_RESULTS);
 
-            for (int i = 0; i < places.length(); i++) {
-                JSONObject jo = places.getJSONObject(i);
-                String placeName = jo.getString(TAG_PLACENAME);
-                String placeCg = jo.getString(TAG_PLACECATEGORY);
+            for (int i = 0; i < brands.length(); i++) {
+                JSONObject jo = brands.getJSONObject(i);
+                String brandID = jo.getString(TAG_BRANDID);
+                String bName = jo.getString(TAG_BRANDNAME);
+                String bCategory1 = jo.getString(TAG_BRANDCATEGORY1);
+                String bCategory2 = jo.getString(TAG_BRANDCATEGORY2);
+                String bBestProd = jo.getString(TAG_BRANDBESTPROD);
+                String bExtraInfo = jo.getString(TAG_BRANDEXTRAINFO);
 
-                HashMap<String, String> place = new HashMap<String, String>();
 
-                place.put(TAG_PLACENAME, placeName);
-                place.put(TAG_PLACECATEGORY, placeCg);
+                HashMap<String, String> brand = new HashMap<String, String>();
 
-                Log.d(TAG, "<place Name>: " +placeName+ "  <place Category>: " +placeCg);
+                brand.put(TAG_BRANDID, brandID);
+                brand.put(TAG_BRANDNAME, bName);
+                brand.put(TAG_BRANDCATEGORY1, bCategory1);
+                brand.put(TAG_BRANDCATEGORY2, bCategory2);
+                brand.put(TAG_BRANDBESTPROD, bBestProd);
+                brand.put(TAG_BRANDEXTRAINFO, bExtraInfo);
 
-                placeList.add(place);
+                Log.d(TAG, "<brand id>: " +brandID+ "  <brand name>: " +bName);
+
+                brandList.add(brand);
             }
 
             ListAdapter adapter = new SimpleAdapter(
-                    SearchActivity.this, placeList, R.layout.adapter_search,
-                    new String[]{TAG_PLACENAME, TAG_PLACECATEGORY},
-                    new int[]{R.id.searchBrandName, R.id.searchCategory}
+                    SearchActivity.this, brandList, R.layout.adapter_search,
+                    new String[]{TAG_BRANDNAME, TAG_BRANDCATEGORY1, TAG_BRANDCATEGORY2},
+                    new int[]{R.id.searchBrandName, R.id.searchCategory1, R.id.searchCategory2}
             );
 
             listView.setAdapter(adapter);
@@ -151,7 +168,6 @@ public class SearchActivity extends AppCompatActivity {
                     StringBuilder sb = new StringBuilder();
 
                     Log.d(TAG, String.valueOf(con));
-
                     Log.d(TAG, String.valueOf(con.getResponseCode()));
 
                     bufferedReader = new BufferedReader(

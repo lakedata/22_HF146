@@ -25,7 +25,7 @@ public class UpdateActivity extends AppCompatActivity {
     private static final int CALL_MEMBERACTIVITY = 0;
     final static String TAG = "UpdateActivity";
 
-    EditText updateName, updateID, updatePW, updatePW2;
+    private EditText updateName, updateID, updatePW, updatePW2;
 
     private String id, name, pw;
     private Button updateBtn, updateCancelBtn;

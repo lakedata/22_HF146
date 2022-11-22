@@ -6,16 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.favBrand.FavBrandActivity">
 
-    <TextView
-        android:id="@+id/text_bookmark"
+    <ListView
+        android:id="@+id/favBrand_listview"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="fav brand activity"
-        android:textSize="20sp"
-        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
