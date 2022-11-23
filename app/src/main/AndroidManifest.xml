@@ -20,6 +20,7 @@
         android:theme="@style/Theme.Mydata.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+
         <activity
             android:name=".ui.mypage.WithdrawActivity"
             android:exported="false" />
@@ -29,56 +30,72 @@
             android:value="@string/api_key" />
 
         <activity
-            android:name=".ui.search.SearchDetailActivity"
-            android:exported="false" />
+            android:name=".ui.search.BrandDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.benefit.BenefitActivity" />
 
         <activity
             android:name=".ui.bookmark.BookmarkActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.map.MapActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.favBrand.FavBrandActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.favApp.FavAppActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.setting.SettingActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.mypage.FavoriteActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.mypage.MyPageActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity2" />
+
         <activity
             android:name=".ui.mypage.MemberActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.mypage.UpdateActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.user.JoinActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.user.LoginActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.search.SearchActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.benefit.BenefitActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.benefit.BenefiltDetailActivity"
             android:exported="false"
             android:parentActivityName=".ui.benefit.BenefitActivity" />
+
         <activity
             android:name=".MainActivity2"
             android:exported="true">
@@ -88,12 +105,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.mypage.SettingActivity2"
             android:exported="false" />
+
         <activity
             android:name=".XAMPPTestActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>

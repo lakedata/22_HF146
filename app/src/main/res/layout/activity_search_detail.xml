@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.search.SearchDetailActivity" >
+    tools:context=".ui.search.BrandDetailActivity" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/benefit_detail_toolbar"
@@ -47,7 +47,6 @@
                         android:id="@+id/search_like"
                         android:layout_width="30dp"
                         android:layout_height="25dp"
-                        android:onClick="onClick"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/search_share"
                         app:layout_constraintTop_toTopOf="parent"
