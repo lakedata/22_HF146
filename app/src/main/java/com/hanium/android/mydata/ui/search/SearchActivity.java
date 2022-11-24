@@ -176,7 +176,6 @@ public class SearchActivity extends AppCompatActivity {
                     String json;
                     while((json = bufferedReader.readLine()) != null) {
                         sb.append(json + "\n");
-                        Log.d(TAG, json);
                     }
 
                     return sb.toString().trim();
