@@ -79,9 +79,9 @@ public class SearchActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(SearchActivity.this, SearchDetailActivity.class);
+                Intent intent = new Intent(SearchActivity.this, BrandDetailActivity.class);
 
-                intent.putExtra("placeID", brandList.get(position).get(TAG_BRANDID));
+                intent.putExtra("brandID", brandList.get(position).get(TAG_BRANDID));
                 intent.putExtra("bName", brandList.get(position).get(TAG_BRANDNAME));
                 intent.putExtra("bCategory1", brandList.get(position).get(TAG_BRANDCATEGORY1));
                 intent.putExtra("bCategory2", brandList.get(position).get(TAG_BRANDCATEGORY2));
