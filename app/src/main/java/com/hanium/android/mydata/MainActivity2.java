@@ -25,6 +25,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hanium.android.mydata.databinding.ActivityMain2Binding;
+import com.hanium.android.mydata.ui.LoadingActivity;
 import com.hanium.android.mydata.ui.benefit.BenefitActivity;
 import com.hanium.android.mydata.ui.bookmark.BookmarkActivity;
 import com.hanium.android.mydata.ui.favApp.FavAppActivity;
@@ -46,7 +47,8 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Intent intent = new Intent(this, LoadingActivity.class);
+        startActivity(intent);
         int i = 0;
         Log.d(TAG, "in Main" +(i++));
 

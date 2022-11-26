@@ -124,13 +124,14 @@
 
 
             <Button
-                android:id="@+id/signBtn"
+                android:id="@+id/withdrawBtn"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:background="#91C788"
+                android:onClick="onClick"
                 android:text="탈퇴하기"
                 android:textColor="#FFFFFF" />
             <Button

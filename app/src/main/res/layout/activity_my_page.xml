@@ -61,16 +61,6 @@
             app:layout_constraintTop_toBottomOf="@+id/logout" />
 
         <TextView
-            android:id="@+id/logout"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="로그아웃"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update" />
-
-        <TextView
             android:id="@+id/withdraw"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -127,5 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="마이페이지" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String userEmail = jsonObject.getString("userEmail");
 //                                int point = jsonObject.getInt("userPoint");
 
+
                                 Toast.makeText(getApplicationContext(), userName+ "님 환영합니다.", Toast.LENGTH_SHORT).show();
 
                                 SharedPreference.setUserID(LoginActivity.this, userID);

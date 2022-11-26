@@ -18,13 +18,15 @@ import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
 
+import org.w3c.dom.Text;
+
 public class MyPageActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 100;
     final static String TAG = "MyPageActivity";
 
     ImageView profile;
-    TextView nameTv, emailTv, heart, update, setting;
+    TextView nameTv, emailTv, heart, update, setting, withdraw;
 
     private String id, name, pw;
 
@@ -49,7 +51,7 @@ public class MyPageActivity extends AppCompatActivity {
         update = (TextView)findViewById(R.id.update);
         setting = (TextView)findViewById(R.id.settings);
         profile = (ImageView)findViewById(R.id.profile);
-
+        withdraw = (TextView)findViewById(R.id.withdraw);
 
         id = SharedPreference.getUserID(MyPageActivity.this);
         name = SharedPreference.getUserName(MyPageActivity.this);
@@ -121,6 +123,14 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        withdraw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), WithdrawActivity.class);
                 startActivity(intent);
             }
         });
