@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class SharedPreference {
 
-    static final String TAG = "MainActivity2";
+    static final String TAG = "LoginActivity";
 
     static final String PREF_USER_ID = "userID";
     static final String PREF_USER_NAME = "userName";
@@ -21,6 +21,7 @@ public class SharedPreference {
     }
 
     public static void setUserName (Context context, String userName) {
+        Log.e(TAG, "user name : " +userName);
         SharedPreferences.Editor editor = getSharedPreference(context).edit();
         editor.putString(PREF_USER_NAME, userName);
         editor.commit();

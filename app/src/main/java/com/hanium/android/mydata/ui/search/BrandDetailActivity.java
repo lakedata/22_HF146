@@ -18,7 +18,6 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
-import com.hanium.android.mydata.ui.user.JoinActivity;
 import com.hanium.android.mydata.ui.user.LoginActivity;
 
 import org.json.JSONObject;
@@ -44,7 +43,7 @@ public class BrandDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_detail);
+        setContentView(R.layout.activity_brand_detail);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.benefit_detail_toolbar);
         setSupportActionBar(mToolbar);
@@ -62,13 +61,13 @@ public class BrandDetailActivity extends AppCompatActivity {
         String bBestProd = intent.getStringExtra("bBestProd");
         String bExtraInfo = intent.getStringExtra("bExtraInfo");
 
-        content = findViewById(R.id.search_content);
-        category1 = findViewById(R.id.search_categoty1);
-        category2 = findViewById(R.id.search_categoty2);
-        benefit = findViewById(R.id.search_benefit);
-        extraInfo = findViewById(R.id.search_extraInfo);
+        content = findViewById(R.id.brand_content);
+        category1 = findViewById(R.id.brand_categoty1);
+        category2 = findViewById(R.id.brand_categoty2);
+        benefit = findViewById(R.id.brand_benefit);
+        extraInfo = findViewById(R.id.brand_extraInfo);
 
-        favBrand = findViewById(R.id.search_like);
+        favBrand = findViewById(R.id.brand_like);
 
         content.setText(bName);
         category1.setText(bCategory1);
@@ -83,52 +82,66 @@ public class BrandDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(isLike == false) {
-                    brandScrap = "Y";
-                } else {
-                    brandScrap = "N";
-                }
+                if (userID.length() == 0) {
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            boolean success = jsonObject.getBoolean("success");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(BrandDetailActivity.this);
+                    builder.setMessage("로그인이 필요한 페이지입니다.\n로그인 페이지로 이동하시겠습니까?")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent toLoginIntent = new Intent(BrandDetailActivity.this, LoginActivity.class);
+                                    startActivity(toLoginIntent);
+                                    return;
+                                }
+                            })
+                            .setNegativeButton("취소", null)
+                            .show();
+                } else {
+
+                    if (isLike == false) {
+                        brandScrap = "Y";
+                    } else {
+                        brandScrap = "N";
+                    }
+
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                boolean success = jsonObject.getBoolean("success");
 //                            String bScrap = jsonObject.getString("bScrap");
 
-                            if(success) {
-                                if(brandScrap.equals("N")) {
-                                    favBrand.setImageResource(R.drawable.unlike_icon);
-                                    isLike = false;
-                                    Toast.makeText(BrandDetailActivity.this, "스크랩 해제", Toast.LENGTH_SHORT).show();
-                                } else if(brandScrap.equals("Y")) {
-                                    favBrand.setImageResource(R.drawable.like_icon);
-                                    isLike = true;
-                                    Toast.makeText(BrandDetailActivity.this, "스크랩", Toast.LENGTH_SHORT).show();
+                                if (success) {
+                                    if (brandScrap.equals("N")) {
+                                        favBrand.setImageResource(R.drawable.unlike_icon);
+                                        isLike = false;
+//                                        Toast.makeText(BrandDetailActivity.this, "스크랩 해제", Toast.LENGTH_SHORT).show();
+                                    } else if (brandScrap.equals("Y")) {
+                                        favBrand.setImageResource(R.drawable.like_icon);
+                                        isLike = true;
+//                                        Toast.makeText(BrandDetailActivity.this, "스크랩", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } else {
+                                    Toast.makeText(BrandDetailActivity.this, "수정에 실패하였습니다.", Toast.LENGTH_LONG).show();
+                                    return;
                                 }
-
-                            } else {
-                                Toast.makeText(BrandDetailActivity.this, "수정에 실패하였습니다.", Toast.LENGTH_LONG).show();
-                                return;
+                            } catch (Exception e) {
+                                Toast.makeText(BrandDetailActivity.this, "ERROR", Toast.LENGTH_LONG).show();
+                                e.printStackTrace();
+                                Log.d(TAG, e.getMessage());
                             }
-                        } catch (Exception e) {
-                            Toast.makeText(BrandDetailActivity.this, "ERROR", Toast.LENGTH_LONG).show();
-                            e.printStackTrace();
-                            Log.d(TAG, e.getMessage());
                         }
-                    }
-                };
+                    };
 
-                UpdateBrandScrapRequest updateRequestBrandScrapRequest = new UpdateBrandScrapRequest(userID, brandID, brandScrap, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(BrandDetailActivity.this);
-                queue.add(updateRequestBrandScrapRequest);
+                    UpdateBrandScrapRequest updateRequestBrandScrapRequest = new UpdateBrandScrapRequest(userID, brandID, brandScrap, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(BrandDetailActivity.this);
+                    queue.add(updateRequestBrandScrapRequest);
+                }
             }
         });
 
-
-        // 로그인처럼 사용자 아이디, 브랜드 아이디 넘기고 php에서 쿼리 실행한담에 bScrap 값 받아오면될듯
-        // BrandScrapRequest, brand_scrap.php 필요
     }
 
     public void getScrap() {

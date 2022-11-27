@@ -5,11 +5,11 @@
 
     <item
         android:id="@+id/nav_login"
-        android:icon="@android:drawable/star_big_on"
+        android:icon="@drawable/ic_login_menu"
         android:title="@string/menu_login" />
     <item
         android:id="@+id/nav_join"
-        android:icon="@android:drawable/stat_notify_chat"
+        android:icon="@drawable/ic_join_menu"
         android:title="@string/menu_join" />
 
     <item android:title="MyB 혜택">
@@ -17,23 +17,23 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_benefit"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/ic_benefit_menu"
                     android:title="@string/menu_benefit" />
                 <item
                     android:id="@+id/nav_map"
-                    android:icon="@android:drawable/ic_dialog_map"
+                    android:icon="@drawable/ic_map_menu"
                     android:title="@string/menu_map" />
                 <item
                     android:id="@+id/nav_bookmark"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/ic_bookmark"
                     android:title="@string/menu_bookmark" />
                 <item
                     android:id="@+id/nav_favBrand"
-                    android:icon="@drawable/ic_menu_send"
+                    android:icon="@drawable/ic_fav_brand_menu"
                     android:title="@string/menu_favBrand" />
                 <item
                     android:id="@+id/nav_favApp"
-                    android:icon="@android:drawable/checkbox_on_background"
+                    android:icon="@drawable/ic_fav_app_menu"
                     android:title="@string/menu_favApp" />
             </group>
         </menu>

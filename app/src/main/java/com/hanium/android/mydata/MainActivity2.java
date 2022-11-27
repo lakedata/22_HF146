@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = new Intent(this, LoadingActivity.class);
+        Intent intent = new Intent(MainActivity2.this, LoadingActivity.class);
         startActivity(intent);
         int i = 0;
         Log.d(TAG, "in Main" +(i++));
