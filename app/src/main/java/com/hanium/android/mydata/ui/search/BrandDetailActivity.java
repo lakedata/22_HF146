@@ -24,7 +24,7 @@ import org.json.JSONObject;
 
 public class BrandDetailActivity extends AppCompatActivity {
 
-    final static String TAG = "SearchDetailActivity";
+    final static String TAG = "BrandDetailActivity";
 
 //    String myJSON;
 //    JSONArray bScraps = null;
@@ -45,7 +45,7 @@ public class BrandDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brand_detail);
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.benefit_detail_toolbar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.brand_detail_toolbar);
         setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -61,6 +61,10 @@ public class BrandDetailActivity extends AppCompatActivity {
         String bBestProd = intent.getStringExtra("bBestProd");
         String bExtraInfo = intent.getStringExtra("bExtraInfo");
 
+        String discntType = intent.getStringExtra("discntType");
+        String discntRate = intent.getStringExtra("discntRate");
+        String discntInfo = intent.getStringExtra("discntInfo");
+
         content = findViewById(R.id.brand_content);
         category1 = findViewById(R.id.brand_categoty1);
         category2 = findViewById(R.id.brand_categoty2);
@@ -72,6 +76,7 @@ public class BrandDetailActivity extends AppCompatActivity {
         content.setText(bName);
         category1.setText(bCategory1);
         category2.setText(bCategory2);
+        benefit.setText(discntRate+ " " +discntType);
         extraInfo.setText(bExtraInfo);
 
 

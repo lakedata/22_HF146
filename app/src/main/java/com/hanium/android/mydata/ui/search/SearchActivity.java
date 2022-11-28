@@ -40,6 +40,11 @@ public class SearchActivity extends AppCompatActivity {
     private static final String TAG_BRANDBESTPROD = "bBestProd";
     private static final String TAG_BRANDEXTRAINFO = "bExtraInfo";
 
+    private static final String TAG_B_DISCNTTYPE = "b_discntType";
+    private static final String TAG_B_DISCNTRATE = "b_discntRate";
+    private static final String TAG_B_DISCNTINFO = "b_discntInfo";
+
+
     JSONArray brands = null;
     ArrayList<HashMap<String, String>> brandList;
 
@@ -48,7 +53,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private SearchAdapter searchAdapter;
 
-    private String bID;
+//    private String bID;
 
 
     @Override
@@ -88,7 +93,12 @@ public class SearchActivity extends AppCompatActivity {
                 intent.putExtra("bBestProd", brandList.get(position).get(TAG_BRANDBESTPROD));
                 intent.putExtra("bExtraInfo", brandList.get(position).get(TAG_BRANDEXTRAINFO));
 
-//                Log.d(TAG, "click item ID: " +placeList.get(position).get(TAG_PLACEID));
+                intent.putExtra("discntType", brandList.get(position).get(TAG_B_DISCNTTYPE));
+                intent.putExtra("discntRate", brandList.get(position).get(TAG_B_DISCNTRATE));
+                intent.putExtra("discntInfo", brandList.get(position).get(TAG_B_DISCNTINFO));
+
+                Log.d(TAG, "click, discount info: " +brandList.get(position).get(TAG_B_DISCNTINFO));
+
                 startActivity(intent);
             }
         });
@@ -121,6 +131,10 @@ public class SearchActivity extends AppCompatActivity {
                 String bBestProd = jo.getString(TAG_BRANDBESTPROD);
                 String bExtraInfo = jo.getString(TAG_BRANDEXTRAINFO);
 
+                String bDiscntType = jo.getString(TAG_B_DISCNTTYPE);
+                String bDiscntRate = jo.getString(TAG_B_DISCNTRATE);
+                String bDiscntInfo = jo.getString(TAG_B_DISCNTINFO);
+
 
                 HashMap<String, String> brand = new HashMap<String, String>();
 
@@ -131,15 +145,19 @@ public class SearchActivity extends AppCompatActivity {
                 brand.put(TAG_BRANDBESTPROD, bBestProd);
                 brand.put(TAG_BRANDEXTRAINFO, bExtraInfo);
 
-                Log.d(TAG, "<brand id>: " +brandID+ "  <brand name>: " +bName);
+                brand.put(TAG_B_DISCNTTYPE, bDiscntType);
+                brand.put(TAG_B_DISCNTRATE, bDiscntRate);
+                brand.put(TAG_B_DISCNTINFO, bDiscntInfo);
+
+                Log.d(TAG, "<brand id>: " +brandID+ "  <brand discount type>: " +bDiscntType);
 
                 brandList.add(brand);
             }
 
             ListAdapter adapter = new SimpleAdapter(
                     SearchActivity.this, brandList, R.layout.adapter_search,
-                    new String[]{TAG_BRANDNAME, TAG_BRANDCATEGORY1, TAG_BRANDCATEGORY2},
-                    new int[]{R.id.searchBrandName, R.id.searchCategory1, R.id.searchCategory2}
+                    new String[]{TAG_BRANDNAME, TAG_BRANDCATEGORY1, TAG_BRANDCATEGORY2, TAG_B_DISCNTTYPE},
+                    new int[]{R.id.searchBrandName, R.id.searchCategory1, R.id.searchCategory2, R.id.searchForm}
             );
 
             listView.setAdapter(adapter);

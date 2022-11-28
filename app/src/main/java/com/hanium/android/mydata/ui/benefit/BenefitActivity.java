@@ -60,7 +60,7 @@ public class BenefitActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Go to Detail Activity
-                Intent i = new Intent(BenefitActivity.this, BenefiltDetailActivity.class);
+                Intent i = new Intent(BenefitActivity.this, BenefitDetailActivity.class);
                 // Send the position number to Detail Activity too.
                 i.putExtra("position", position);
                 // Run the process

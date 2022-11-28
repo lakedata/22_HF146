@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.benefit.BenefiltDetailActivity">
+    tools:context=".ui.benefit.BenefitDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/benefit_detail_toolbar"
@@ -115,6 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
+                    android:background="@drawable/round"
                     android:text="할인 또는 적립 혜택을 받기 위해서는 반드시 직업에게 app내 바코드를 제시해야합나다. 횟수제한: 월 1회" />
             </LinearLayout>
         </ScrollView>

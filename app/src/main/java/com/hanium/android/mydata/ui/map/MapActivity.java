@@ -213,6 +213,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     private void callDetailActivity(Place place) {
+
+        String pExtraInfo = place.getPhoneNumber()+ "\n" +place.getOpeningHours();
         Intent intent = new Intent(getApplicationContext(), PlaceDetailActivity.class);
 
         Log.d(TAG, place.getName());
@@ -220,9 +222,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         intent.putExtra("pName", place.getName());
         intent.putExtra("pCategory1", category1);
         intent.putExtra("pCategory2", category2);
-        intent.putExtra("pPhoneNum", place.getPhoneNumber());
         intent.putExtra("pAddr", place.getAddress());
-        intent.putExtra("pOpenHour", place.getOpeningHours());
+        intent.putExtra("pExtraInfo", pExtraInfo);
 
         startActivity(intent);
     }

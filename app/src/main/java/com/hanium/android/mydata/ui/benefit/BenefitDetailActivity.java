@@ -2,7 +2,6 @@ package com.hanium.android.mydata.ui.benefit;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -11,7 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.hanium.android.mydata.R;
 
-public class BenefiltDetailActivity extends AppCompatActivity {
+public class BenefitDetailActivity extends AppCompatActivity {
 
     final static String TAG = "BenefitDetailActivity";
     @Override
@@ -31,7 +30,7 @@ public class BenefiltDetailActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imageView_like:
-                Toast.makeText(BenefiltDetailActivity.this, "즐겨찾기 등록", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BenefitDetailActivity.this, "즐겨찾기 등록", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

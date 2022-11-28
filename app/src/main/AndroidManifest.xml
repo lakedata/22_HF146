@@ -111,7 +111,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.benefit.BenefiltDetailActivity"
+            android:name=".ui.benefit.BenefitDetailActivity"
             android:exported="false"
             android:parentActivityName=".ui.benefit.BenefitActivity" />
 

@@ -121,7 +121,7 @@ public class MainActivity2 extends AppCompatActivity {
                         startActivity(toLoginIntent);
                         break;
                     case R.id.nav_benefit:
-                        Intent benefitIntent = new Intent(MainActivity2.this, BenefitActivity.class);
+                        Intent benefitIntent = new Intent(MainActivity2.this, SearchActivity.class);
                         benefitIntent.putExtra("userID", userID);
                         startActivity(benefitIntent);
                         break;

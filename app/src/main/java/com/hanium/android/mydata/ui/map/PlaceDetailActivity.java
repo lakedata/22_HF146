@@ -30,7 +30,7 @@ public class PlaceDetailActivity extends AppCompatActivity {
 
     final static String TAG = "PlaceDetailActivity";
 
-    private TextView content, category1, category2, benefit, extraInfo;
+    private TextView content, category1, category2, addr, benefit, extraInfo;
     private ImageView favPlace;
 
     private String userID, placeID, placeScrap, pName, pCategory1, pCategory2, pAddr, pExtraInfo;
@@ -59,27 +59,26 @@ public class PlaceDetailActivity extends AppCompatActivity {
         pAddr = intent.getStringExtra("pAddr");
         pCategory1 = intent.getStringExtra("pCategory1");
         pCategory2 = intent.getStringExtra("pCategory2");
-        String pOpenHour = intent.getStringExtra("pOpenHour");
+        pExtraInfo = intent.getStringExtra("pExtraInfo");
 
-
-        pExtraInfo = pPhoneNum+ "\n" +pOpenHour;
 
         content = findViewById(R.id.place_content);
         category1 = findViewById(R.id.place_categoty1);
         category2 = findViewById(R.id.place_categoty2);
+        addr = findViewById(R.id.place_addr);
         extraInfo = findViewById(R.id.place_extraInfo);
 
         favPlace = findViewById(R.id.place_like);
 
+        Log.d(TAG, pName);
         content.setText(pName);
         category1.setText(pCategory1);
         category2.setText(pCategory2);
+        addr.setText(pAddr);
         extraInfo.setText(pExtraInfo);
 
+
         insertPlace();
-
-
-
 
 
         favPlace.setOnClickListener(new View.OnClickListener() {

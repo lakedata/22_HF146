@@ -3,6 +3,7 @@ package com.hanium.android.mydata.ui.favPlace;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.SimpleAdapter;
 
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
+import com.hanium.android.mydata.ui.map.PlaceDetailActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,6 +40,7 @@ public class FavPlaceActivity extends AppCompatActivity {
     private static final String TAG_PLACENAME = "pName";
     private static final String TAG_PLACECATEGORY1 = "pCategory1";
     private static final String TAG_PLACECATEGORY2 = "pCategory2";
+    private static final String TAG_PLACEADDR = "pAddr";
     private static final String TAG_PLACEBESTPROD = "pBestProd";
     private static final String TAG_PLACEEXTRAINFO = "pExtraInfo";
 
@@ -72,6 +75,16 @@ public class FavPlaceActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
+                Intent intent = new Intent(getApplicationContext(), PlaceDetailActivity.class);
+
+                intent.putExtra("placeID", favPlaceList.get(position).get(TAG_PLACEID));
+                intent.putExtra("pName", favPlaceList.get(position).get(TAG_PLACENAME));
+                intent.putExtra("pCategory1", favPlaceList.get(position).get(TAG_PLACECATEGORY1));
+                intent.putExtra("pCategory2", favPlaceList.get(position).get(TAG_PLACECATEGORY2));
+                intent.putExtra("pAddr", favPlaceList.get(position).get(TAG_PLACEADDR));
+                intent.putExtra("pExtraInfo", favPlaceList.get(position).get(TAG_PLACEEXTRAINFO));
+
+                startActivity(intent);
             }
         });
     }
@@ -91,6 +104,7 @@ public class FavPlaceActivity extends AppCompatActivity {
                 String pName = jo.getString(TAG_PLACENAME);
                 String pCategory1 = jo.getString(TAG_PLACECATEGORY1);
                 String pCategory2 = jo.getString(TAG_PLACECATEGORY2);
+                String pAddr = jo.getString(TAG_PLACEADDR);
                 String pBestProd = jo.getString(TAG_PLACEBESTPROD);
                 String pExtraInfo = jo.getString(TAG_PLACEEXTRAINFO);
 
@@ -102,6 +116,7 @@ public class FavPlaceActivity extends AppCompatActivity {
                 favPlace.put(TAG_PLACENAME, pName);
                 favPlace.put(TAG_PLACECATEGORY1, pCategory1);
                 favPlace.put(TAG_PLACECATEGORY2, pCategory2);
+                favPlace.put(TAG_PLACEADDR, pAddr);
                 favPlace.put(TAG_PLACEBESTPROD, pBestProd);
                 favPlace.put(TAG_PLACEEXTRAINFO, pExtraInfo);
 

@@ -3,6 +3,7 @@ package com.hanium.android.mydata.ui.favBrand;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,8 @@ import android.widget.SimpleAdapter;
 
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
+import com.hanium.android.mydata.ui.search.BrandDetailActivity;
+import com.hanium.android.mydata.ui.search.SearchActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -41,6 +44,10 @@ public class FavBrandActivity extends AppCompatActivity {
     private static final String TAG_BRANDCATEGORY2 = "bCategory2";
     private static final String TAG_BRANDBESTPROD = "bBestProd";
     private static final String TAG_BRANDEXTRAINFO = "bExtraInfo";
+
+    private static final String TAG_B_DISCNTTYPE = "b_discntType";
+    private static final String TAG_B_DISCNTRATE = "b_discntRate";
+    private static final String TAG_B_DISCNTINFO = "b_discntInfo";
 
     JSONArray favBrands = null;
     ArrayList<HashMap<String, String>> favBrandList;
@@ -73,7 +80,20 @@ public class FavBrandActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent(FavBrandActivity.this, BrandDetailActivity.class);
 
+                intent.putExtra("brandID", favBrandList.get(position).get(TAG_BRANDID));
+                intent.putExtra("bName", favBrandList.get(position).get(TAG_BRANDNAME));
+                intent.putExtra("bCategory1", favBrandList.get(position).get(TAG_BRANDCATEGORY1));
+                intent.putExtra("bCategory2", favBrandList.get(position).get(TAG_BRANDCATEGORY2));
+                intent.putExtra("bBestProd", favBrandList.get(position).get(TAG_BRANDBESTPROD));
+                intent.putExtra("bExtraInfo", favBrandList.get(position).get(TAG_BRANDEXTRAINFO));
+
+                intent.putExtra("discntType", favBrandList.get(position).get(TAG_B_DISCNTTYPE));
+                intent.putExtra("discntRate", favBrandList.get(position).get(TAG_B_DISCNTRATE));
+                intent.putExtra("discntInfo", favBrandList.get(position).get(TAG_B_DISCNTINFO));
+
+                startActivity(intent);
             }
         });
     }
@@ -96,6 +116,10 @@ public class FavBrandActivity extends AppCompatActivity {
                 String bBestProd = jo.getString(TAG_BRANDBESTPROD);
                 String bExtraInfo = jo.getString(TAG_BRANDEXTRAINFO);
 
+                String bDiscntType = jo.getString(TAG_B_DISCNTTYPE);
+                String bDiscntRate = jo.getString(TAG_B_DISCNTRATE);
+                String bDiscntInfo = jo.getString(TAG_B_DISCNTINFO);
+
                 HashMap<String, String> favBrand = new HashMap<String, String>();
 
                 favBrand.put(TAG_USERID, userID);
@@ -106,6 +130,10 @@ public class FavBrandActivity extends AppCompatActivity {
                 favBrand.put(TAG_BRANDCATEGORY2, bCategory2);
                 favBrand.put(TAG_BRANDBESTPROD, bBestProd);
                 favBrand.put(TAG_BRANDEXTRAINFO, bExtraInfo);
+
+                favBrand.put(TAG_B_DISCNTTYPE, bDiscntType);
+                favBrand.put(TAG_B_DISCNTRATE, bDiscntRate);
+                favBrand.put(TAG_B_DISCNTINFO, bDiscntInfo);
 
                 Log.d(TAG, "<userID>: " +userID+ "  <brandID>: " +brandID+ "  <scrap>: " +brandScrap);
 
