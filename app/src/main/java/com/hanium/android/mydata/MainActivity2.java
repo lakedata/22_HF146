@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,6 +83,7 @@ public class MainActivity2 extends AppCompatActivity {
         View nav_header_view = navigationView.getHeaderView(0);
         TextView nav_header_userName = (TextView) nav_header_view.findViewById(R.id.nav_header_userName);
         TextView nav_header_point = (TextView) nav_header_view.findViewById(R.id.nav_header_point);
+
 
 
         String userName = SharedPreference.getUserName(MainActivity2.this);

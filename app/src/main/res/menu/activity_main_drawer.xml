@@ -29,7 +29,7 @@
                     android:title="@string/menu_bookmark" />
                 <item
                     android:id="@+id/nav_favBrand"
-                    android:icon="@drawable/ic_fav_brand_menu"
+                    android:icon="@drawable/ic_bookmark"
                     android:title="@string/menu_favBrand" />
                 <item
                     android:id="@+id/nav_favApp"
@@ -44,11 +44,11 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_mypage"
-                    android:icon="@android:drawable/ic_dialog_email"
+                    android:icon="@drawable/ic_mypage_menu"
                     android:title="@string/menu_mypage" />
                 <item
                     android:id="@+id/nav_setting"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_setting_menu"
                     android:title="@string/menu_setting" />
             </group>
         </menu>
