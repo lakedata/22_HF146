@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
+import com.hanium.android.mydata.ui.favBrand.FavBrandActivity;
 import com.hanium.android.mydata.ui.user.LoginActivity;
 import com.hanium.android.mydata.R;
 import com.hanium.android.mydata.SharedPreference;
@@ -26,7 +27,7 @@ public class MyPageActivity extends AppCompatActivity {
     final static String TAG = "MyPageActivity";
 
     ImageView profile;
-    TextView nameTv, emailTv, heart, update, setting, withdraw;
+    TextView nameTv, heart, update, setting, withdraw, brand;
 
     private String id, name, pw;
 
@@ -45,9 +46,9 @@ public class MyPageActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기
 
 
-        emailTv = (TextView) findViewById(R.id.emailTv);
         nameTv = (TextView)findViewById(R.id.nameTv);
         heart = (TextView)findViewById(R.id.heart);
+        brand =(TextView)findViewById(R.id.brand);
         update = (TextView)findViewById(R.id.update);
         setting = (TextView)findViewById(R.id.settings);
         profile = (ImageView)findViewById(R.id.profile);
@@ -92,6 +93,14 @@ public class MyPageActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), FavoriteActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+
+        brand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyPageActivity.this, FavBrandActivity.class);
+                startActivity(intent);
             }
         });
 

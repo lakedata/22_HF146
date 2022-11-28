@@ -20,20 +20,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="329dp"
-        android:layout_height="222dp"
-        android:layout_marginTop="348dp"
+        android:layout_width="390dp"
+        android:layout_height="257dp"
+        android:layout_marginTop="299dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/brand"
             android:layout_width="291dp"
-            android:layout_height="40dp"
-            android:text="자주 찾는 브랜드"
+            android:layout_height="41.5dp"
+            android:text="                 자주 찾는 브랜드"
             android:textColor="#000000"
             android:textSize="18dp"
             tools:layout_editor_absoluteX="13dp"
@@ -41,10 +41,10 @@
 
         <TextView
             android:id="@+id/update"
-            android:layout_width="275dp"
-            android:layout_height="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="41.5dp"
 
-            android:text="내 정보 변경"
+            android:text="                 내 정보 변경"
             android:textColor="#000000"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,8 +53,8 @@
         <TextView
             android:id="@+id/settings"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="환경설정"
+            android:layout_height="42dp"
+            android:text="                 환경설정"
             android:textColor="#000000"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,8 +63,8 @@
         <TextView
             android:id="@+id/withdraw"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="회원탈퇴"
+            android:layout_height="41dp"
+            android:text="                 회원탈퇴"
             android:textColor="#000000"
             android:textSize="18dp"
             tools:layout_editor_absoluteX="-39dp"
@@ -73,25 +73,15 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/emailTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="로그인이 필요합니다."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nameTv" />
-
-    <TextView
         android:id="@+id/nameTv"
         android:layout_width="186dp"
         android:layout_height="31dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="264dp"
         android:text="로그인이 필요합니다."
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,12 +90,12 @@
         android:layout_width="87dp"
         android:layout_height="29dp"
         android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="296dp"
         android:background="@drawable/heart"
         app:backgroundTint="#91C788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mypage_toolbar"
         android:layout_width="0dp"
@@ -118,6 +108,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="마이페이지" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="245dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_mypage_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
