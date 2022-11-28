@@ -9,6 +9,14 @@
 
     <queries>
         <package android:name="com.android.chrome" />
+        <package android:name="com.google.android.youtube" />
+
+        <package android:name="com.tms" />
+        <package android:name="uplus.membership" />
+        <package android:name="com.olleh.android.oc" />
+        <package android:name="kr.co.ivlog.mobile.app.cjonecard" />
+        <package android:name="com.starbucks.co" />
+        <package android:name="com.easymembership.gongcha" />
     </queries>
 
     <application
