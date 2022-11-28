@@ -34,6 +34,7 @@ import com.hanium.android.mydata.ui.map.MapActivity;
 import com.hanium.android.mydata.ui.mypage.MyPageActivity;
 import com.hanium.android.mydata.ui.search.SearchActivity;
 import com.hanium.android.mydata.ui.setting.SettingActivity;
+import com.hanium.android.mydata.ui.user.JoinActivity;
 import com.hanium.android.mydata.ui.user.LoginActivity;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -119,6 +120,10 @@ public class MainActivity2 extends AppCompatActivity {
                     case R.id.nav_login:
                         Intent toLoginIntent = new Intent(MainActivity2.this, LoginActivity.class);
                         startActivity(toLoginIntent);
+                        break;
+                    case R.id.nav_join:
+                        Intent toJoinIntent = new Intent(MainActivity2.this, JoinActivity.class);
+                        startActivity(toJoinIntent);
                         break;
                     case R.id.nav_benefit:
                         Intent benefitIntent = new Intent(MainActivity2.this, SearchActivity.class);
