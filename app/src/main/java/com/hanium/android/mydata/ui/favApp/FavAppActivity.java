@@ -1,8 +1,8 @@
 package com.hanium.android.mydata.ui.favApp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -10,9 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
-import com.hanium.android.mydata.MainActivity2;
 import com.hanium.android.mydata.R;
 
 import java.util.List;
@@ -25,6 +23,11 @@ public class FavAppActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav_app);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.fav_app_toolbar);
+        setSupportActionBar(mToolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
-        android:id="@+id/searchBrandImage"
+        android:id="@+id/favPlaceImage"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerInParent="true"
@@ -33,7 +35,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/searchBrandImage"
+        app:layout_constraintStart_toEndOf="@+id/favPlaceImage"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -42,7 +44,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/searchCategory1"
+                android:id="@+id/favPlaceCategory1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="카페"
@@ -57,7 +59,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/searchCategory2"
+                android:id="@+id/favPlaceCategory2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="카페"
@@ -66,7 +68,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/searchBrandName"
+            android:id="@+id/favPlaceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -74,11 +76,12 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/searchForm"
+            android:id="@+id/favPlaceForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="할인"
             android:textSize="12sp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

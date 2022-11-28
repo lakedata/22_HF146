@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hanium.android.mydata.databinding.ActivityMain2Binding;
 import com.hanium.android.mydata.ui.LoadingActivity;
 import com.hanium.android.mydata.ui.benefit.BenefitActivity;
-import com.hanium.android.mydata.ui.bookmark.BookmarkActivity;
+import com.hanium.android.mydata.ui.favPlace.FavPlaceActivity;
 import com.hanium.android.mydata.ui.favApp.FavAppActivity;
 import com.hanium.android.mydata.ui.favBrand.FavBrandActivity;
 import com.hanium.android.mydata.ui.map.MapActivity;
@@ -72,7 +71,7 @@ public class MainActivity2 extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_benefit, R.id.nav_map, R.id.nav_bookmark, R.id.nav_favBrand, R.id.nav_favApp,
+                R.id.nav_home, R.id.nav_benefit, R.id.nav_map, R.id.nav_favPlace, R.id.nav_favBrand, R.id.nav_favApp,
                 R.id.nav_mypage, R.id.nav_setting)
                 .setOpenableLayout(drawer)
                 .build();
@@ -131,8 +130,8 @@ public class MainActivity2 extends AppCompatActivity {
                         mapIntent.putExtra("userID", userID);
                         startActivity(mapIntent);
                         break;
-                    case R.id.nav_bookmark:
-                        Intent bookmarkIntent = new Intent(MainActivity2.this, BookmarkActivity.class);
+                    case R.id.nav_favPlace:
+                        Intent bookmarkIntent = new Intent(MainActivity2.this, FavPlaceActivity.class);
                         bookmarkIntent.putExtra("userID", userID);
                         startActivity(bookmarkIntent);
                         break;

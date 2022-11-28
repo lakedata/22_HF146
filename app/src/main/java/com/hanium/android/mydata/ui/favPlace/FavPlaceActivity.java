@@ -1,4 +1,4 @@
-package com.hanium.android.mydata.ui.favBrand;
+package com.hanium.android.mydata.ui.favPlace;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,25 +25,24 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class FavBrandActivity extends AppCompatActivity {
+public class FavPlaceActivity extends AppCompatActivity {
 
-    final static String TAG = "FavBrandActivity";
+    final static String TAG = "FavPlaceActivity";
 
-    // bCategory1, bCategory2, bBestPord, bIMG, bExtraInfo
     String myJSON;
 
     private static final String TAG_RESULTS = "result";
     private static final String TAG_USERID = "userID";
-    private static final String TAG_BRANDID = "brandID";
-    private static final String TAG_BRANDSCRAP = "bScrap";
-    private static final String TAG_BRANDNAME = "bName";
-    private static final String TAG_BRANDCATEGORY1 = "bCategory1";
-    private static final String TAG_BRANDCATEGORY2 = "bCategory2";
-    private static final String TAG_BRANDBESTPROD = "bBestProd";
-    private static final String TAG_BRANDEXTRAINFO = "bExtraInfo";
+    private static final String TAG_PLACEID = "placeID";
+    private static final String TAG_PLACESCRAP = "pScrap";
+    private static final String TAG_PLACENAME = "pName";
+    private static final String TAG_PLACECATEGORY1 = "pCategory1";
+    private static final String TAG_PLACECATEGORY2 = "pCategory2";
+    private static final String TAG_PLACEBESTPROD = "pBestProd";
+    private static final String TAG_PLACEEXTRAINFO = "pExtraInfo";
 
-    JSONArray favBrands = null;
-    ArrayList<HashMap<String, String>> favBrandList;
+    JSONArray favPlaces = null;
+    ArrayList<HashMap<String, String>> favPlaceList;
 
     private ListView listView = null;
 
@@ -53,22 +52,21 @@ public class FavBrandActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fav_brand);
+        setContentView(R.layout.activity_fav_place);
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.fav_brand_toolbar);
+        listView = findViewById(R.id.favPlace_listview);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.fav_place_toolbar);
         setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        listView = findViewById(R.id.favBrand_listview);
+        favPlaceList = new ArrayList<HashMap<String, String>>();
 
-        favBrandList = new ArrayList<HashMap<String, String>>();
+        userID = SharedPreference.getUserID(FavPlaceActivity.this);
 
-        userID = SharedPreference.getUserID(FavBrandActivity.this);
-        Log.d(TAG, userID);
+        getData("http://192.168.43.1/PHP_connection_placeScrap.php?userID=" +userID);
 
-
-        getData("http://192.168.43.1/PHP_connection_brandScrap.php?userID=" +userID);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -83,38 +81,38 @@ public class FavBrandActivity extends AppCompatActivity {
         try {
             Log.d(TAG, myJSON);
             JSONObject jsonObject = new JSONObject(myJSON);
-            favBrands = jsonObject.getJSONArray(TAG_RESULTS);
+            favPlaces = jsonObject.getJSONArray(TAG_RESULTS);
 
-            for (int i = 0; i < favBrands.length(); i++) {
-                JSONObject jo = favBrands.getJSONObject(i);
+            for (int i = 0; i < favPlaces.length(); i++) {
+                JSONObject jo = favPlaces.getJSONObject(i);
                 String userID = jo.getString(TAG_USERID);
-                String brandID = jo.getString(TAG_BRANDID);
-                String brandScrap = jo.getString(TAG_BRANDSCRAP);
-                String bName = jo.getString(TAG_BRANDNAME);
-                String bCategory1 = jo.getString(TAG_BRANDCATEGORY1);
-                String bCategory2 = jo.getString(TAG_BRANDCATEGORY2);
-                String bBestProd = jo.getString(TAG_BRANDBESTPROD);
-                String bExtraInfo = jo.getString(TAG_BRANDEXTRAINFO);
+                String placeID = jo.getString(TAG_PLACEID);
+                String placeScrap = jo.getString(TAG_PLACESCRAP);
+                String pName = jo.getString(TAG_PLACENAME);
+                String pCategory1 = jo.getString(TAG_PLACECATEGORY1);
+                String pCategory2 = jo.getString(TAG_PLACECATEGORY2);
+                String pBestProd = jo.getString(TAG_PLACEBESTPROD);
+                String pExtraInfo = jo.getString(TAG_PLACEEXTRAINFO);
 
-                HashMap<String, String> favBrand = new HashMap<String, String>();
+                HashMap<String, String> favPlace = new HashMap<String, String>();
 
-                favBrand.put(TAG_USERID, userID);
-                favBrand.put(TAG_BRANDID, brandID);
-                favBrand.put(TAG_BRANDSCRAP, brandScrap);
-                favBrand.put(TAG_BRANDNAME, bName);
-                favBrand.put(TAG_BRANDCATEGORY1, bCategory1);
-                favBrand.put(TAG_BRANDCATEGORY2, bCategory2);
-                favBrand.put(TAG_BRANDBESTPROD, bBestProd);
-                favBrand.put(TAG_BRANDEXTRAINFO, bExtraInfo);
+                favPlace.put(TAG_USERID, userID);
+                favPlace.put(TAG_PLACEID, placeID);
+                favPlace.put(TAG_PLACESCRAP, placeScrap);
+                favPlace.put(TAG_PLACENAME, pName);
+                favPlace.put(TAG_PLACECATEGORY1, pCategory1);
+                favPlace.put(TAG_PLACECATEGORY2, pCategory2);
+                favPlace.put(TAG_PLACEBESTPROD, pBestProd);
+                favPlace.put(TAG_PLACEEXTRAINFO, pExtraInfo);
 
-                Log.d(TAG, "<userID>: " +userID+ "  <brandID>: " +brandID+ "  <scrap>: " +brandScrap);
+                Log.d(TAG, "<userID>: " +userID+ "  <brandID>: " +placeID+ "  <scrap>: " +placeScrap);
 
-                favBrandList.add(favBrand);
+                favPlaceList.add(favPlace);
             }
 
             ListAdapter adapter = new SimpleAdapter(
-                    FavBrandActivity.this, favBrandList, R.layout.adapter_fav_brand,
-                    new String[]{TAG_BRANDNAME, TAG_BRANDCATEGORY1, TAG_BRANDCATEGORY2},
+                    FavPlaceActivity.this, favPlaceList, R.layout.adapter_fav_brand,
+                    new String[]{TAG_PLACENAME, TAG_PLACECATEGORY1, TAG_PLACECATEGORY2},
                     new int[]{R.id.favBrandName, R.id.favBrandCategory1, R.id.favBrandCategory2}
             );
 
@@ -125,6 +123,7 @@ public class FavBrandActivity extends AppCompatActivity {
             Log.d(TAG, e.getMessage());
         }
     }
+
 
     public void getData(String url) {
         class GetDataJSON extends AsyncTask<String, Void, String> {

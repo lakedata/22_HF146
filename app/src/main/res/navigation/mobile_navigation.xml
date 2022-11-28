@@ -24,10 +24,10 @@
         tools:layout="@layout/activity_map" />
 
     <activity
-        android:id="@+id/nav_bookmark"
-        android:name="com.hanium.android.mydata.ui.bookmark.BookmarkActivity"
+        android:id="@+id/nav_favPlace"
+        android:name="com.hanium.android.mydata.ui.favPlace.FavPlaceActivity"
         android:label="@string/menu_bookmark"
-        tools:layout="@layout/activity_bookmark" />
+        tools:layout="@layout/activity_fav_place" />
 
     <activity
         android:id="@+id/nav_favBrand"

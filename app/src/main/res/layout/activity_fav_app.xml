@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.favApp.FavAppActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fav_app_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary4"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="자주찾는 멤버십 앱"/>
+
     <TextView
         android:id="@+id/text_bookmark"
         android:layout_width="0dp"

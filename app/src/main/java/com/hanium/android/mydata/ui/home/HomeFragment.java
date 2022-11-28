@@ -6,12 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.hanium.android.mydata.MainActivity2;
@@ -19,7 +16,6 @@ import com.hanium.android.mydata.databinding.FragmentHomeBinding;
 import com.hanium.android.mydata.ui.favApp.FavAppActivity;
 import com.hanium.android.mydata.ui.favBrand.FavBrandActivity;
 import com.hanium.android.mydata.ui.map.MapActivity;
-import com.hanium.android.mydata.ui.user.LoginActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -53,8 +49,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        ImageView home_fav_brand = binding.icHomeFavApp;
-        home_map.setOnClickListener(new View.OnClickListener() {
+        ImageView home_fav_brand = binding.icHomeFavBrand;
+        home_fav_brand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentM = new Intent((MainActivity2) getActivity(), FavBrandActivity.class);
@@ -63,7 +59,7 @@ public class HomeFragment extends Fragment {
         });
 
         ImageView home_fav_app = binding.icHomeFavApp;
-        home_map.setOnClickListener(new View.OnClickListener() {
+        home_fav_app.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentM = new Intent((MainActivity2) getActivity(), FavAppActivity.class);

@@ -40,11 +40,12 @@
         <activity
             android:name=".ui.search.BrandDetailActivity"
             android:exported="false"
-            android:parentActivityName=".ui.benefit.BenefitActivity" />
+            android:parentActivityName=".ui.search.SearchActivity" />
 
         <activity
-            android:name=".ui.bookmark.BookmarkActivity"
-            android:exported="false" />
+            android:name=".ui.favPlace.FavPlaceActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity2"/>
 
         <activity
             android:name=".ui.map.MapActivity"
@@ -52,11 +53,13 @@
 
         <activity
             android:name=".ui.favBrand.FavBrandActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity2"/>
 
         <activity
             android:name=".ui.favApp.FavAppActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity2"/>
 
         <activity
             android:name=".ui.setting.SettingActivity"
