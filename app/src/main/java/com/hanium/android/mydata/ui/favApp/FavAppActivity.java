@@ -61,10 +61,6 @@ public class FavAppActivity extends AppCompatActivity {
                 packageName = "com.easymembership.gongcha";
                 openApp(packageName);
                 break;
-            case R.id.chromeBtn:
-                packageName = "com.google.android.youtube";
-                openApp(packageName);
-                break;
         }
     }
 

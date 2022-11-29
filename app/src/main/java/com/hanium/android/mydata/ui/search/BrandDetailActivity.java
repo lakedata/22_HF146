@@ -22,6 +22,9 @@ import com.hanium.android.mydata.ui.user.LoginActivity;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class BrandDetailActivity extends AppCompatActivity {
 
     final static String TAG = "BrandDetailActivity";
@@ -33,6 +36,12 @@ public class BrandDetailActivity extends AppCompatActivity {
 //    private static final String TAG_USERID = "userID";
 //    private static final String TAG_BRANDID = "brandID";
 //    private static final String TAG_BRANDSCRAP = "bScrap";
+
+    private static final String TAG_B_EVENTID = "b_eventID";
+    private static final String TAG_B_DISCNTTYPE1 = "b_discntType1";
+    private static final String TAG_B_DISCNTTYPE2 = "b_discntType2";
+    private static final String TAG_B_DISCNTRATE = "b_discntRate";
+    private static final String TAG_B_DISCNTINFO = "b_discntInfo";
 
     private TextView content, category1, category2, benefit, extraInfo;
     private ImageView favBrand;
@@ -53,17 +62,22 @@ public class BrandDetailActivity extends AppCompatActivity {
         userID = SharedPreference.getUserID(BrandDetailActivity.this);
 
         Intent intent = getIntent();
-        int position = intent.getIntExtra("position", 0);
         brandID = intent.getStringExtra("brandID");
         String bName = intent.getStringExtra("bName");
         String bCategory1 = intent.getStringExtra("bCategory1");
         String bCategory2 = intent.getStringExtra("bCategory2");
-        String bBestProd = intent.getStringExtra("bBestProd");
         String bExtraInfo = intent.getStringExtra("bExtraInfo");
 
-        String discntType = intent.getStringExtra("discntType");
+        String eventID = intent.getStringExtra("b_eventID");
+        String discntType1 = intent.getStringExtra("discntType1");
+        String discntType2 = intent.getStringExtra("discntType2");
         String discntRate = intent.getStringExtra("discntRate");
         String discntInfo = intent.getStringExtra("discntInfo");
+
+        if (discntType1 == null) discntType1 = "";
+        if (discntType2 == null) discntType2 = "";
+        if (discntInfo == null) discntInfo = "";
+        if (discntRate == null) discntRate = "정보 없음";
 
         content = findViewById(R.id.brand_content);
         category1 = findViewById(R.id.brand_categoty1);
@@ -76,7 +90,7 @@ public class BrandDetailActivity extends AppCompatActivity {
         content.setText(bName);
         category1.setText(bCategory1);
         category2.setText(bCategory2);
-        benefit.setText(discntRate+ " " +discntType);
+        benefit.setText(discntType2+ " " +discntType1+ "\n" +discntRate+ "% " +discntInfo);
         extraInfo.setText(bExtraInfo);
 
 
@@ -121,11 +135,11 @@ public class BrandDetailActivity extends AppCompatActivity {
                                     if (brandScrap.equals("N")) {
                                         favBrand.setImageResource(R.drawable.unlike_icon);
                                         isLike = false;
-//                                        Toast.makeText(BrandDetailActivity.this, "스크랩 해제", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(BrandDetailActivity.this, "스크랩 취소", Toast.LENGTH_SHORT).show();
                                     } else if (brandScrap.equals("Y")) {
                                         favBrand.setImageResource(R.drawable.like_icon);
                                         isLike = true;
-//                                        Toast.makeText(BrandDetailActivity.this, "스크랩", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(BrandDetailActivity.this, "스크랩", Toast.LENGTH_SHORT).show();
                                     }
 
                                 } else {

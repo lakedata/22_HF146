@@ -12,7 +12,7 @@ import java.util.Map;
 public class WithdrawRequest extends StringRequest {
     final static String TAG = "WithdrawActivity";
 
-    final static private String URL = "http://192.168.133.1/withdraw_user.php";
+    final static private String URL = "http://192.168.43.1/withdraw_user.php";
     private Map<String, String> map;
 
     public WithdrawRequest(String userID, Response.Listener<String> listener) {

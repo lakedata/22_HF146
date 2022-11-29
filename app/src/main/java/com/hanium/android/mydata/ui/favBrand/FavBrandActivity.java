@@ -42,10 +42,11 @@ public class FavBrandActivity extends AppCompatActivity {
     private static final String TAG_BRANDNAME = "bName";
     private static final String TAG_BRANDCATEGORY1 = "bCategory1";
     private static final String TAG_BRANDCATEGORY2 = "bCategory2";
-    private static final String TAG_BRANDBESTPROD = "bBestProd";
     private static final String TAG_BRANDEXTRAINFO = "bExtraInfo";
 
-    private static final String TAG_B_DISCNTTYPE = "b_discntType";
+    private static final String TAG_B_EVENTID = "b_eventID";
+    private static final String TAG_B_DISCNTTYPE1 = "b_discntType1";
+    private static final String TAG_B_DISCNTTYPE2 = "b_discntType2";
     private static final String TAG_B_DISCNTRATE = "b_discntRate";
     private static final String TAG_B_DISCNTINFO = "b_discntInfo";
 
@@ -73,6 +74,8 @@ public class FavBrandActivity extends AppCompatActivity {
 
         userID = SharedPreference.getUserID(FavBrandActivity.this);
 
+
+
         if(userID.length() == 0) {
             favBrandList.clear();
         }
@@ -88,10 +91,11 @@ public class FavBrandActivity extends AppCompatActivity {
                 intent.putExtra("bName", favBrandList.get(position).get(TAG_BRANDNAME));
                 intent.putExtra("bCategory1", favBrandList.get(position).get(TAG_BRANDCATEGORY1));
                 intent.putExtra("bCategory2", favBrandList.get(position).get(TAG_BRANDCATEGORY2));
-                intent.putExtra("bBestProd", favBrandList.get(position).get(TAG_BRANDBESTPROD));
                 intent.putExtra("bExtraInfo", favBrandList.get(position).get(TAG_BRANDEXTRAINFO));
 
-                intent.putExtra("discntType", favBrandList.get(position).get(TAG_B_DISCNTTYPE));
+                intent.putExtra("b_eventID", favBrandList.get(position).get(TAG_B_EVENTID));
+                intent.putExtra("discntType1", favBrandList.get(position).get(TAG_B_DISCNTTYPE1));
+                intent.putExtra("discntType2", favBrandList.get(position).get(TAG_B_DISCNTTYPE2));
                 intent.putExtra("discntRate", favBrandList.get(position).get(TAG_B_DISCNTRATE));
                 intent.putExtra("discntInfo", favBrandList.get(position).get(TAG_B_DISCNTINFO));
 
@@ -115,10 +119,11 @@ public class FavBrandActivity extends AppCompatActivity {
                 String bName = jo.getString(TAG_BRANDNAME);
                 String bCategory1 = jo.getString(TAG_BRANDCATEGORY1);
                 String bCategory2 = jo.getString(TAG_BRANDCATEGORY2);
-                String bBestProd = jo.getString(TAG_BRANDBESTPROD);
                 String bExtraInfo = jo.getString(TAG_BRANDEXTRAINFO);
 
-                String bDiscntType = jo.getString(TAG_B_DISCNTTYPE);
+                String b_eventID = jo.getString(TAG_B_EVENTID);
+                String bDiscntType1 = jo.getString(TAG_B_DISCNTTYPE1);
+                String bDiscntType2 = jo.getString(TAG_B_DISCNTTYPE2);
                 String bDiscntRate = jo.getString(TAG_B_DISCNTRATE);
                 String bDiscntInfo = jo.getString(TAG_B_DISCNTINFO);
 
@@ -130,10 +135,11 @@ public class FavBrandActivity extends AppCompatActivity {
                 favBrand.put(TAG_BRANDNAME, bName);
                 favBrand.put(TAG_BRANDCATEGORY1, bCategory1);
                 favBrand.put(TAG_BRANDCATEGORY2, bCategory2);
-                favBrand.put(TAG_BRANDBESTPROD, bBestProd);
                 favBrand.put(TAG_BRANDEXTRAINFO, bExtraInfo);
 
-                favBrand.put(TAG_B_DISCNTTYPE, bDiscntType);
+                favBrand.put(TAG_B_EVENTID, b_eventID);
+                favBrand.put(TAG_B_DISCNTTYPE1, bDiscntType1);
+                favBrand.put(TAG_B_DISCNTTYPE2, bDiscntType2);
                 favBrand.put(TAG_B_DISCNTRATE, bDiscntRate);
                 favBrand.put(TAG_B_DISCNTINFO, bDiscntInfo);
 
@@ -144,8 +150,8 @@ public class FavBrandActivity extends AppCompatActivity {
 
             ListAdapter adapter = new SimpleAdapter(
                     FavBrandActivity.this, favBrandList, R.layout.adapter_fav_brand,
-                    new String[]{TAG_BRANDNAME, TAG_BRANDCATEGORY1, TAG_BRANDCATEGORY2},
-                    new int[]{R.id.favBrandName, R.id.favBrandCategory1, R.id.favBrandCategory2}
+                    new String[]{TAG_BRANDNAME, TAG_BRANDCATEGORY1, TAG_BRANDCATEGORY2, TAG_B_DISCNTTYPE1},
+                    new int[]{R.id.favBrandName, R.id.favBrandCategory1, R.id.favBrandCategory2, R.id.favBrandForm}
             );
 
             listView.setAdapter(adapter);

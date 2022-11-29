@@ -71,6 +71,7 @@ public class PlaceDetailActivity extends AppCompatActivity {
         favPlace = findViewById(R.id.place_like);
 
         Log.d(TAG, pName);
+
         content.setText(pName);
         category1.setText(pCategory1);
         category2.setText(pCategory2);
