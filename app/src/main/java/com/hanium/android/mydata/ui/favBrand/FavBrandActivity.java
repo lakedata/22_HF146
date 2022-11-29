@@ -72,8 +72,10 @@ public class FavBrandActivity extends AppCompatActivity {
         favBrandList = new ArrayList<HashMap<String, String>>();
 
         userID = SharedPreference.getUserID(FavBrandActivity.this);
-        Log.d(TAG, userID);
 
+        if(userID.length() == 0) {
+            favBrandList.clear();
+        }
 
         getData("http://192.168.43.1/PHP_connection_brandScrap.php?userID=" +userID);
 

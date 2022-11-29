@@ -13,7 +13,7 @@ public class IDCheckRequest extends StringRequest  {
 
     final static String TAG = "JoinActivity";
 
-    final static  private String URL = "http:// 192.168.133.1/idCheck.php";
+    final static  private String URL = "http://192.168.43.1/idCheck.php";
     private Map<String, String> map;
 
     public IDCheckRequest(String userID, Response.Listener<String> listener) {
