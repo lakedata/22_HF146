@@ -167,6 +167,7 @@ public class MyPageActivity extends AppCompatActivity {
             return mIcon11;
         }
 
+
         protected void onPostExecute(Bitmap result) {
             //Glide.with(getApplicationContext()).load(result).circleCrop().into(bmImage);
 //            bmImage.setImageBitmap(result);
