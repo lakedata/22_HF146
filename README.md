@@ -9,4 +9,8 @@
 | 할인 혜택 | 자주 찾는 멤버십 앱을 연동하여 MyB 앱에서원하는 앱으로 이동이 가능하며 ‘자주 찾는 브랜드’, ‘혜택’, ‘검색’ 페이지를 통해 해당 브랜드의 상세 정보를 통해 할인 혜택 정보를 제공한다. 마이데이터를 활용하여 통신사, 자주 찾는 매장 등과 관련된 이벤트 및 쿠폰 정보를 확인할 수 있다. |
 | 즐겨찾기 | 즐겨 찾는 브랜드 및 장소 (매장)을 직접 추가하고 삭제할 수 있다. 해당 브랜드 선택 시 제공받거나 이용할 수 있는 혜택 정보를 확인할 수 있다. 또한, 자주 찾는 장소의 주소 위치 및 상세 정보도 제공한다. |
 
-<img src="https://gifmaker.me/video-to-gif/viewimage/20230817-08-4t7rNp7LtCvDV57h-zMGKLi-HNET)https://gifmaker.me/video-to-gif/viewimage/20230817-08-4t7rNp7LtCvDV57h-zMGKLi-HNET">
+
+
+![GIFMaker_me](https://github.com/lakedata/22_HF146/assets/94455716/4dcce4ed-7984-4907-b8fa-ea9be5ed8ef1)
+
+
